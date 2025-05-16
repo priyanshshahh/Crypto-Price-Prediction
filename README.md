@@ -54,7 +54,7 @@ A comprehensive pipeline to analyze and predict the price of **Bitcoin**, **Ethe
 ## 📊 Visual Dashboard
 
 Explore the **interactive Tableau dashboard** for insights:
-👉 [View Dashboard](https://us-east-1.online.tableau.com/t/priyanshshah-7ae2fd725b/views/Dasboard/Dashboard1/90db5)
+👉 [View Dashboard]([https://us-east-1.online.tableau.com/t/priyanshshah-7ae2fd725b/views/Dasboard/Dashboard1/90db5](https://us-east-1.online.tableau.com/t/priyanshshah-7ae2fd725b/views/Dasboard/Dashboard1))
 
 ---
 

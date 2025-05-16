@@ -1,0 +1,17 @@
+{
+  "Bitcoin": {
+    "Optimal_Clusters": 4,
+    "Best_Algorithm": "KMeans",
+    "Silhouette": 0.2168183120392055
+  },
+  "Ethereum": {
+    "Optimal_Clusters": 3,
+    "Best_Algorithm": "KMeans",
+    "Silhouette": 0.2090370121544604
+  },
+  "Dogecoin": {
+    "Optimal_Clusters": 2,
+    "Best_Algorithm": "Agglomerative",
+    "Silhouette": 0.7283058511559366
+  }
+}

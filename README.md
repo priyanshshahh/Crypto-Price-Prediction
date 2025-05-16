@@ -79,6 +79,7 @@ An interactive dashboard is created with:
 - Technical indicator charts
 - Clustering visualizations
 - Price forecasts
+- Tableau Dashboard link:https://us-east-1.online.tableau.com/t/priyanshshah-7ae2fd725b/views/Dasboard/Dashboard1/90db5220-4278-4134-bf7d-4a3b677e2bf2/36580626-190f-4ab6-9b66-39ee13f69e70
 
 ## Running the Project
 

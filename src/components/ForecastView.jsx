@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
+import { getClient } from '../lib/supabase';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { format } from 'date-fns';
 import { Calendar, TrendingUp } from 'lucide-react';
@@ -17,7 +17,9 @@ export default function ForecastView({ cryptoId, cryptoName }) {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const { data: forecastData, error: forecastError } = await supabase
+      const db = await getClient();
+
+      const { data: forecastData, error: forecastError } = await db
         .from('forecasts')
         .select('*')
         .eq('crypto_id', cryptoId)
@@ -25,7 +27,7 @@ export default function ForecastView({ cryptoId, cryptoName }) {
 
       if (forecastError) throw forecastError;
 
-      const { data: priceData, error: priceError } = await supabase
+      const { data: priceData, error: priceError } = await db
         .from('price_history')
         .select('*')
         .eq('crypto_id', cryptoId)

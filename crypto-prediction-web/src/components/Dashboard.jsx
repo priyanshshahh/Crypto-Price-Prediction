@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
+import { getClient } from '../lib/supabase';
 import { TrendingUp, TrendingDown, Activity, BarChart3 } from 'lucide-react';
 import PriceChart from './PriceChart';
 import ModelPerformance from './ModelPerformance';
@@ -19,7 +19,9 @@ export default function Dashboard() {
 
   const fetchData = async () => {
     try {
-      const { data: cryptoData, error: cryptoError } = await supabase
+      const db = await getClient();
+
+      const { data: cryptoData, error: cryptoError } = await db
         .from('cryptocurrencies')
         .select('*');
 
@@ -32,7 +34,7 @@ export default function Dashboard() {
 
       const priceDataMap = {};
       for (const crypto of cryptoData) {
-        const { data: prices, error: priceError } = await supabase
+        const { data: prices, error: priceError } = await db
           .from('price_history')
           .select('*')
           .eq('crypto_id', crypto.id)

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
+import { getClient } from '../lib/supabase';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 import { Award, TrendingUp } from 'lucide-react';
 
@@ -14,7 +14,8 @@ export default function ModelPerformance({ cryptoId, cryptoName }) {
   const fetchModels = async () => {
     setLoading(true);
     try {
-      const { data, error } = await supabase
+      const db = await getClient();
+      const { data, error } = await db
         .from('regression_models')
         .select('*')
         .eq('crypto_id', cryptoId)

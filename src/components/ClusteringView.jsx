@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
+import { getClient } from '../lib/supabase';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { Layers, Award } from 'lucide-react';
 
@@ -14,7 +14,8 @@ export default function ClusteringView({ cryptoId, cryptoName }) {
   const fetchClusteringData = async () => {
     setLoading(true);
     try {
-      const { data, error } = await supabase
+      const db = await getClient();
+      const { data, error } = await db
         .from('clustering_results')
         .select('*')
         .eq('crypto_id', cryptoId)

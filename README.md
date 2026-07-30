@@ -1,130 +1,140 @@
+# Crypto Price Prediction & Analysis
 
-# 🪙 Cryptocurrency Price Prediction & Analysis
+End-to-end ML pipeline forecasting daily prices for **Bitcoin**, **Ethereum**, and **Dogecoin**
+from **real OHLCV market data**, plus an interactive React dashboard.
 
-A comprehensive pipeline to analyze and predict the price of **Bitcoin**, **Ethereum**, and **Dogecoin** using regression models, time-series forecasting, and clustering. Includes data collection, processing, model training, and visual analytics in both Python and Tableau.
+- **Data**: real daily candles from the Coinbase Exchange public API (Kraken as automatic fallback) — free, keyless, cached locally
+- **Models**: regularized regressions (Ridge/Lasso/ElasticNet), SVR, Random Forest, Gradient Boosting; ARIMA and LSTM time-series models; K-Means / Agglomerative / GMM / DBSCAN market-regime clustering
+- **Evaluation**: chronological holdout, walk-forward one-step ARIMA, persistence baselines, returns-based metrics — no shuffled splits, no leakage, no cherry-picking
+- **Outputs**: `results/metrics.json` (with provenance), `public/data/crypto_data.json` (drives the dashboard), PNG charts
 
----
+## Honest results (measured 2026-07-06, data 2024-07-06 → 2026-07-06, seed 42)
 
-## 📂 Project Structure
+The headline first: **daily crypto returns are close to unpredictable from technical
+indicators alone, and this project says so.** Directional accuracy hovers around 50% and no
+model decisively beats the naive persistence baseline (tomorrow's close = today's close).
 
-| File / Notebook                   | Description                                               |
-|----------------------------------|-----------------------------------------------------------|
-| `cryp_dta_collection.ipynb`      | Collects OHLCV data via CryptoCompare API                |
-| `cryp_dta_preprocessing.ipynb`   | Cleans and prepares features for modeling                |
-| `crypt_regression_model.ipynb`   | Predicts prices using Ridge, Lasso, RF, SVR, etc.         |
-| `crypt_timeseries_model.ipynb`   | Time-Series Forecasting using ARIMA and LSTM             |
-| `crypt_clustering_analysis.ipynb`| Groups crypto behavior via KMeans, Agglomerative         |
-| `regression_results.json`        | Stores regression model scores                           |
-| `time_series_results.json`       | Forecast results (ARIMA and LSTM)                        |
-| `clustering_results.json`        | Best clustering results and silhouette scores            |
-| `create_dashboard.py`            | (Optional) Generates charts for model comparisons        |
+An earlier version of this README quoted R² ≈ 0.98 for "price prediction". That number was
+real but **misleading**: next-day *price levels* are strongly autocorrelated, so even
+"predict yesterday's price" scores R² > 0.9. All primary metrics below are therefore
+**returns-based**, with the persistence baseline alongside every model.
 
----
+### Next-day return prediction (chronological 80/20 holdout, test ≈ 129 days)
 
-## 📈 Best Regression Model Results
+| Crypto | Best directional accuracy | Best return RMSE (model) | Persistence RMSE (baseline) | Up-day share (baseline) |
+|--------|---------------------------|--------------------------|------------------------------|--------------------------|
+| BTC    | 57.4% (SVR)               | 0.02143 (Lasso)          | **0.02088**                  | 50.4% |
+| ETH    | 50.8% (Ridge)             | 0.02926 (Lasso)          | **0.02829**                  | 50.4% |
+| DOGE   | 53.9% (GradientBoosting)  | 0.02888 (Lasso)          | **0.02631**                  | 49.6% |
 
-| Crypto    | Best Model | R² Score | RMSE     | MAE      |
-|-----------|------------|----------|----------|----------|
-| Bitcoin   | Ridge      | 0.9827   | 2087.57  | 1493.16  |
-| Ethereum  | Lasso      | 0.9685   | 105.35   | 75.30    |
-| Dogecoin  | Lasso      | 0.9843   | 0.0132   | 0.0082   |
+No regression model beats the persistence RMSE — the honest conclusion. (SVR's 57.4%
+directional accuracy on BTC comes with the worst RMSE; it is not a free lunch.)
 
----
+### Time-series models — one-step-ahead price RMSE on the holdout
 
-## ⏳ Best Time-Series Forecasting Results
+| Crypto | ARIMA (order) | ARIMA RMSE | LSTM RMSE | Persistence RMSE | ARIMA dir. acc | LSTM dir. acc |
+|--------|---------------|------------|-----------|-------------------|----------------|----------------|
+| BTC    | (0,1,1)       | 1477.72    | 3837.32   | **1472.24**       | 45.6% | 42.9% |
+| ETH    | (0,1,1)       | **59.538** | 116.76    | 59.540            | 52.7% | 54.1% |
+| DOGE   | (0,1,1)       | 0.00304    | 0.01020   | **0.00293**       | 49.3% | 49.3% |
 
-| Crypto    | Best Model | R² Score | RMSE     | MAE      |
-|-----------|------------|----------|----------|----------|
-| Bitcoin   | LSTM       | 0.9269   | 4309.50  | 3521.21  |
-| Ethereum  | LSTM       | 0.9494   | 135.76   | 100.27   |
-| Dogecoin  | LSTM       | 0.9779   | 0.0158   | 0.0105   |
+ARIMA collapses to essentially a random-walk model — (0,1,1) tracking persistence — which is
+exactly what efficient-market theory predicts for daily data. The LSTM (capped at 40 epochs
+with early stopping; it stopped at 13–15) underperforms persistence.
 
----
+### Market-regime clustering (silhouette scores)
 
-## 🧩 Clustering Summary
+| Crypto | Best algorithm | k | Silhouette |
+|--------|----------------|---|------------|
+| BTC    | DBSCAN         | 3 | 0.363 |
+| ETH    | KMeans         | 3 | 0.267 |
+| DOGE   | Agglomerative  | 2 | 0.625 |
 
-| Crypto    | Best Algorithm  | Clusters | Silhouette Score |
-|-----------|-----------------|----------|------------------|
-| Bitcoin   | KMeans          | 4        | 0.2168           |
-| Ethereum  | KMeans          | 3        | 0.2090           |
-| Dogecoin  | Agglomerative   | 2        | **0.7283**       |
+Clustering on (return, volatility, RSI, MACD, volume) daily vectors does find structure —
+distinct calm/volatile regimes — and is the most defensible unsupervised result here.
 
----
+Every number above comes from a run executed on this repository; full metrics with
+provenance (data source, date range, seed, evaluation policy) are committed in
+[`results/metrics.json`](results/metrics.json).
 
-## 📊 Visual Dashboard
+## Architecture
 
-Explore the **interactive Tableau dashboard** for insights:
-👉 View Dashboard: https://us-east-1.online.tableau.com/t/priyanshshah-7ae2fd725b/views/Dasboard/Dashboard1
----
+```
+pipeline.py                 one-command orchestrator
+crypto_pipeline/
+  data.py                   Coinbase/Kraken fetchers, parsing, validation, data/raw/ cache
+  features.py               technical indicators + LSTM windowing (no look-ahead)
+  models.py                 regressions, ARIMA (walk-forward), LSTM (train-only scaling)
+  clustering.py             KMeans / Agglomerative / GMM / DBSCAN regime clustering
+  report.py                 metrics.json + dashboard JSON assembly, schema validation
+tests/                      pytest suite (23 tests) + committed real-data fixture
+src/                        React (Vite) dashboard
+public/data/crypto_data.json  static data consumed by the dashboard
+results/                    metrics.json, per-symbol CSVs, PNG charts
+```
 
-## 📌 Recommended Visual Charts
-
-You can generate these in Python or Tableau for added insights:
-- 📊 Bar chart: Top regression model R² by coin
-- ⏳ Line plot: LSTM forecast vs actual prices
-- 🔍 Feature importance chart from RF/GBR
-- 🧩 Clustering silhouette comparison per coin
-
-Notebook or Python script like `create_dashboard.py` can automate these visualizations.
-
----
-
-## ⚙️ How to Run
+## Setup & run
 
 ```bash
-git clone https://github.com/priyanshshahh/crypto-price-prediction.git
-cd crypto-price-prediction
-pip install -r requirements.txt
-````
+# Python (TensorFlow needs Python <= 3.12)
+python3.12 -m venv .venv
+.venv/bin/pip install -r requirements.txt
 
-Run notebooks in order:
+# one command: fetch real data -> train -> evaluate -> write results + dashboard JSON
+.venv/bin/python pipeline.py            # ~3-5 min on CPU (LSTM epochs capped at 40 + early stopping)
+# options: --days 730  --force-refresh  --skip-lstm  --epochs N
 
-1. `cryp_dta_collection.ipynb`
-2. `cryp_dta_preprocessing.ipynb`
-3. `crypt_regression_model.ipynb`
-4. `crypt_clustering_analysis.ipynb`
-5. `crypt_timeseries_model.ipynb`
-
----
-
-## 📦 Dependencies
-
-Install using:
-
-```
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-statsmodels
-tensorflow
-keras
-jupyter
-requests
+# tests
+.venv/bin/python -m pytest tests/ -q
 ```
 
-*(Already included in `requirements.txt`)*
+Raw pulls are cached in `data/raw/` (gitignored, refreshed after 24h). A 250-row sample of
+real BTC data is committed at `tests/fixtures/BTC_sample.csv` so tests run offline.
 
----
+## Dashboard
 
-## 🔮 Future Additions
+The React dashboard reads the **static JSON** produced by the pipeline
+(`public/data/crypto_data.json`) via a mock Supabase-compatible client — this is the
+default and requires **zero backend**. If you set `VITE_SUPABASE_URL` /
+`VITE_SUPABASE_ANON_KEY`, it transparently switches to a real Supabase project
+(migrations in `supabase/`), but that is optional.
 
-* Social sentiment integration (Reddit/Twitter)
-* Live crypto price streaming via WebSockets
-* Streamlit-based dashboard for model deployment
+```bash
+npm ci
+npm run dev      # local dev
+npm run build    # production build (verified passing)
+```
 
----
+Deployment steps (Vercel, free tier): see [DEPLOY.md](DEPLOY.md).
 
-## 👨‍💻 Author
+A Tableau dashboard built on the same outputs:
+https://us-east-1.online.tableau.com/t/priyanshshah-7ae2fd725b/views/Dasboard/Dashboard1
 
-**Priyansh Shah**
-🎓 Stony Brook University | B.S. Applied Mathematics and Statistics
-📧 [priyansh.shah@stonybrook.edu](mailto:priyansh.shah@stonybrook.edu)
-🔗 [LinkedIn](https://linkedin.com/in/priyansh-shah)
+## Evaluation policy (what "honest" means here)
 
----
+- Chronological 80/20 split; never shuffled. Test window ≈ last 129 days.
+- Scalers (StandardScaler / MinMaxScaler) fit on **train only** — the original LSTM fit its
+  scaler on the full series, which was look-ahead leakage; fixed.
+- ARIMA evaluated **walk-forward one-step-ahead** (train-fitted parameters applied over the
+  growing history), not a single 146-day-ahead extrapolation.
+- Every model is compared against the **persistence baseline**.
+- Fixed seed (42) for NumPy / scikit-learn / TensorFlow; LSTM epoch cap documented.
 
-## 📜 License
+## Limitations
 
-For academic and educational use only. No financial advice.
+- Daily technical indicators contain little exploitable signal; results reflect that. This
+  project demonstrates pipeline & evaluation engineering, not alpha.
+- ~2 years of daily data (≈731 candles, Coinbase/Kraken public API caps) — small for LSTMs.
+- No transaction-cost or strategy backtest; directional accuracy is not a trading claim.
+- LSTM results vary slightly across hardware even with fixed seeds (TF non-determinism).
+- The Jupyter notebooks (`cryp_*.ipynb`, `crypt_*.ipynb`) are the original exploratory
+  work, kept for history; `pipeline.py` + `crypto_pipeline/` is the maintained path.
+
+## Author
+
+**Priyansh Shah** — Stony Brook University, B.S. Applied Mathematics and Statistics
+[priyansh.shah@stonybrook.edu](mailto:priyansh.shah@stonybrook.edu) · [LinkedIn](https://linkedin.com/in/priyansh-shah)
+
+## License
+
+MIT (see LICENSE). Educational project — not financial advice.

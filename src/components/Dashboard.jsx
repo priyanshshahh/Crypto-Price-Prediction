@@ -214,7 +214,10 @@ export default function Dashboard() {
               <li><strong>Clustering Analysis:</strong> KMeans, DBSCAN, Agglomerative, and GMM for market regime identification</li>
             </ul>
             <p className="text-gray-700 mt-4">
-              The models achieve high accuracy with R² scores above 94% for all cryptocurrencies.
+              All metrics come from real daily OHLCV data (Coinbase Exchange public API) evaluated on a
+              chronological holdout against a persistence baseline. Daily crypto returns are hard to
+              predict: directional accuracy hovers near 50% and no model decisively beats the naive
+              baseline — the dashboard reports that honestly rather than quoting inflated price-level R².
             </p>
           </div>
         </div>

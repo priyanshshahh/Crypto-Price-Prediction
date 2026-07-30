@@ -7,4 +7,8 @@ __pycache__/
 .pytest_cache/
 
 # Raw data cache (re-fetched by pipeline.py; sample fixture lives in tests/fixtures/)
-data/
+# Root-only so public/data/crypto_data.json (dashboard) stays tracked.
+/data/
+.vercel
+.env*
+!.env.example

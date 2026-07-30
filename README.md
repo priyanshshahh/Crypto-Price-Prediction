@@ -36,7 +36,7 @@ directional accuracy on BTC comes with the worst RMSE; it is not a free lunch.)
 |--------|---------------|------------|-----------|-------------------|----------------|----------------|
 | BTC    | (0,1,1)       | 1477.72    | 3837.32   | **1472.24**       | 45.6% | 42.9% |
 | ETH    | (0,1,1)       | **59.538** | 116.76    | 59.540            | 52.7% | 54.1% |
-| DOGE   | (0,1,1)       | 0.00304    | 0.01020   | **0.00293**       | 49.3% | 49.3% |
+| DOGE   | (0,1,1)       | 0.00297    | 0.01020   | **0.00293**       | 49.3% | 49.3% |
 
 ARIMA collapses to essentially a random-walk model — (0,1,1) tracking persistence — which is
 exactly what efficient-market theory predicts for daily data. The LSTM (capped at 40 epochs

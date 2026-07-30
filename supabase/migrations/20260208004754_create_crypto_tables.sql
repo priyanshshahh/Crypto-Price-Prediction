@@ -81,6 +81,7 @@ CREATE TABLE IF NOT EXISTS regression_models (
   r2_score numeric NOT NULL DEFAULT 0,
   rmse numeric NOT NULL DEFAULT 0,
   mae numeric NOT NULL DEFAULT 0,
+  directional_accuracy numeric,
   is_best boolean DEFAULT false,
   created_at timestamptz DEFAULT now()
 );

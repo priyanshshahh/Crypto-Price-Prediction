@@ -49,13 +49,19 @@ def test_run_regressions_smoke(feat):
 
 
 def test_run_arima_smoke(feat, btc_fixture):
-    out = run_arima(btc_fixture["Close"], steps=5, orders=((1, 1, 1), (0, 1, 1)))
+    out = run_arima(btc_fixture["Close"], steps=5, orders=((1, 0, 1), (1, 0, 0)))
     assert len(out["forecasts"]) == 5
     assert len(out["pred_price"]) == out["n_test"] == len(out["actual_price"])
     assert np.isfinite(out["price"]["rmse"])
-    # every forecast entry is (date_str, positive price)
-    for date_str, price in out["forecasts"]:
+    assert out["on"] == "log_returns"
+    prices = [item[1] for item in out["forecasts"]]
+    # Must not be a flat random-walk line (old ARIMA(0,1,1)-on-price bug)
+    assert float(np.std(prices)) > 0 or abs(prices[-1] - prices[0]) > 0
+    for item in out["forecasts"]:
+        date_str, price = item[0], item[1]
         assert len(date_str) == 10 and price > 0
+        if len(item) >= 4:
+            assert item[3] >= item[2]
 
 
 def test_run_lstm_smoke(btc_fixture):

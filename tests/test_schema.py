@@ -52,6 +52,29 @@ def test_build_and_validate_dashboard_json(btc_fixture):
     assert "Persistence (baseline)" in names
 
 
+def test_horizon_forecasts_optional_table(btc_fixture):
+    """horizon_forecasts is optional dashboard table for multi-horizon UI."""
+    symbols, frames, reg, ts, clus = _fake_run_outputs(btc_fixture)
+    hz = [{
+        "symbol": "BTC",
+        "horizon_days": 1,
+        "horizon_label": "1D",
+        "as_of": "2026-07-30",
+        "current_price": 100000.0,
+        "predicted_price": 101000.0,
+        "predicted_price_p10": 98000.0,
+        "predicted_price_p90": 104000.0,
+        "predicted_return_pct": 1.0,
+        "model": "Ridge",
+        "trustworthy": False,
+    }]
+    doc = build_dashboard_json(symbols, frames, reg, ts, clus, horizon_forecasts=hz)
+    validate_dashboard_json(doc)
+    assert len(doc["horizon_forecasts"]) == 1
+    assert doc["horizon_forecasts"][0]["crypto_id"] == doc["cryptocurrencies"][0]["id"]
+    assert "predicted_price_p10" in doc["horizon_forecasts"][0]
+
+
 def test_validate_rejects_missing_table(btc_fixture):
     symbols, frames, reg, ts, clus = _fake_run_outputs(btc_fixture)
     doc = build_dashboard_json(symbols, frames, reg, ts, clus)

@@ -1,0 +1,4142 @@
+{
+  "BTC": {
+    "by_horizon": {
+      "1": {
+        "horizon": 1,
+        "symbol": "BTC",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.9643598759126781,
+              "rmse": 0.03434829611264414,
+              "mae": 0.025715712689624245
+            },
+            "price": {
+              "r2": 0.9544049050151149,
+              "rmse": 2655.2142621649564,
+              "mae": 1992.6191719505784
+            },
+            "directional_accuracy": 0.44534412955465585,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.1295298614187561,
+              "rmse": 0.026046149521712938,
+              "mae": 0.01864625609980077
+            },
+            "price": {
+              "r2": 0.9732702512838856,
+              "rmse": 2033.0026642664886,
+              "mae": 1461.9959828825235
+            },
+            "directional_accuracy": 0.4574898785425101,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.2366073550966714,
+              "rmse": 0.027252765768061727,
+              "mae": 0.019580568220930638
+            },
+            "price": {
+              "r2": 0.9708543743375389,
+              "rmse": 2122.888581598469,
+              "mae": 1531.2929746937596
+            },
+            "directional_accuracy": 0.44534412955465585,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.6797027774326809,
+              "rmse": 0.03176222303827677,
+              "mae": 0.022431883701783107
+            },
+            "price": {
+              "r2": 0.9594353120427407,
+              "rmse": 2504.462766871656,
+              "mae": 1762.2460095189203
+            },
+            "directional_accuracy": 0.46153846153846156,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.7596405311952383,
+              "rmse": 0.03250922747445606,
+              "mae": 0.023651791008242197
+            },
+            "price": {
+              "r2": 0.9578123069045099,
+              "rmse": 2554.0735454073933,
+              "mae": 1855.8018071614931
+            },
+            "directional_accuracy": 0.46153846153846156,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.9318950274488371,
+              "rmse": 0.03406327755279439,
+              "mae": 0.024703298084266023
+            },
+            "price": {
+              "r2": 0.9539102364280556,
+              "rmse": 2669.578831661222,
+              "mae": 1926.957311172833
+            },
+            "directional_accuracy": 0.46153846153846156,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.7652969327039689,
+              "rmse": 0.032561436349328225,
+              "mae": 0.02339626722837655
+            },
+            "price": {
+              "r2": 0.9576346491188917,
+              "rmse": 2559.44566129416,
+              "mae": 1832.6542479966504
+            },
+            "directional_accuracy": 0.46153846153846156,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.08133944359903,
+              "rmse": 0.025484475126139258,
+              "mae": 0.018201849388985523
+            },
+            "price": {
+              "r2": 0.9742112984350401,
+              "rmse": 1996.8950846968366,
+              "mae": 1432.5120398283896
+            },
+            "directional_accuracy": 0.46963562753036436,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.025151482685247695,
+              "rmse": 0.024813538063418107,
+              "mae": 0.017675464436526827
+            },
+            "price": {
+              "r2": 0.9760142309923838,
+              "rmse": 1925.8272751418049,
+              "mae": 1386.9601261076025
+            },
+            "directional_accuracy": 0.4534412955465587,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.05811536421418895,
+              "rmse": 0.02520932290754677,
+              "mae": 0.01802646186280778
+            },
+            "price": {
+              "r2": 0.9750553217523992,
+              "rmse": 1963.9456410769544,
+              "mae": 1416.8567079662555
+            },
+            "directional_accuracy": 0.46963562753036436,
+            "beats_persistence_rmse": false
+          }
+        ],
+        "best_model": "StackedTuned",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.00879667256794403,
+            "rmse": 0.024614810206072514,
+            "mae": 0.01747163721384456
+          },
+          "price": {
+            "r2": 0.9765485058958667,
+            "rmse": 1904.2579100857872,
+            "mae": 1369.8240080971657
+          },
+          "up_day_share": 0.4534412955465587
+        },
+        "direction": {
+          "accuracy": 0.46963562753036436,
+          "base_rate_up": 0.5076142131979695,
+          "high_confidence_accuracy": 0.4304635761589404,
+          "high_confidence_frac": 0.611336032388664,
+          "mean_prob_up": 0.64418068120837
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.04613072985371265
+        },
+        "paper": {
+          "best": {
+            "mode": "long_flat",
+            "net_sharpe": 0.0,
+            "gross_sharpe": 0.0,
+            "max_drawdown": 0.0,
+            "n_trades": 0,
+            "hit_rate": 0.5,
+            "mean_net_return": 0.0,
+            "final_equity": 100000.0,
+            "cost_drag": 0.0
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": 0.0,
+              "gross_sharpe": 0.0,
+              "max_drawdown": 0.0,
+              "n_trades": 0,
+              "hit_rate": 0.5,
+              "mean_net_return": 0.0,
+              "final_equity": 100000.0,
+              "cost_drag": 0.0
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": 0.0,
+              "gross_sharpe": 0.0,
+              "max_drawdown": 0.0,
+              "n_trades": 0,
+              "hit_rate": 0.5,
+              "mean_net_return": 0.0,
+              "final_equity": 100000.0,
+              "cost_drag": 0.0
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 33,
+          "pass_frac": 0.18181818181818182,
+          "fold_rmse": [
+            {
+              "rmse": 0.019814571494600742,
+              "persistence_rmse": 0.015599836503936492,
+              "beats": false
+            },
+            {
+              "rmse": 0.029721369209538606,
+              "persistence_rmse": 0.02762643252507764,
+              "beats": false
+            },
+            {
+              "rmse": 0.025476885210726007,
+              "persistence_rmse": 0.02453301233485055,
+              "beats": false
+            },
+            {
+              "rmse": 0.028572094713370303,
+              "persistence_rmse": 0.027394341116797772,
+              "beats": false
+            },
+            {
+              "rmse": 0.02774237769878616,
+              "persistence_rmse": 0.02144805149267584,
+              "beats": false
+            },
+            {
+              "rmse": 0.039215476777118105,
+              "persistence_rmse": 0.03519484955880271,
+              "beats": false
+            },
+            {
+              "rmse": 0.04199329807826151,
+              "persistence_rmse": 0.03683561604201816,
+              "beats": false
+            },
+            {
+              "rmse": 0.03258091367268798,
+              "persistence_rmse": 0.028463500698824862,
+              "beats": false
+            },
+            {
+              "rmse": 0.019640106738947644,
+              "persistence_rmse": 0.020310047299220375,
+              "beats": true
+            },
+            {
+              "rmse": 0.02707232840935677,
+              "persistence_rmse": 0.021557524997840125,
+              "beats": false
+            },
+            {
+              "rmse": 0.03702114942969023,
+              "persistence_rmse": 0.03553820687843659,
+              "beats": false
+            },
+            {
+              "rmse": 0.024642717852960253,
+              "persistence_rmse": 0.025016327448160642,
+              "beats": true
+            },
+            {
+              "rmse": 0.023053513715489173,
+              "persistence_rmse": 0.019942051285032382,
+              "beats": false
+            },
+            {
+              "rmse": 0.03320929226871235,
+              "persistence_rmse": 0.0321104387999031,
+              "beats": false
+            },
+            {
+              "rmse": 0.03363060955630302,
+              "persistence_rmse": 0.024674655030152166,
+              "beats": false
+            },
+            {
+              "rmse": 0.022376386349558245,
+              "persistence_rmse": 0.023635419741479778,
+              "beats": true
+            },
+            {
+              "rmse": 0.020818606128824347,
+              "persistence_rmse": 0.020747952342526844,
+              "beats": false
+            },
+            {
+              "rmse": 0.04050518003507876,
+              "persistence_rmse": 0.03475683366844516,
+              "beats": false
+            },
+            {
+              "rmse": 0.028249138178690774,
+              "persistence_rmse": 0.0288972247940724,
+              "beats": true
+            },
+            {
+              "rmse": 0.027792645041301755,
+              "persistence_rmse": 0.022647136243718644,
+              "beats": false
+            },
+            {
+              "rmse": 0.02188143354039963,
+              "persistence_rmse": 0.017379499561060992,
+              "beats": false
+            },
+            {
+              "rmse": 0.015184712571617853,
+              "persistence_rmse": 0.014583119404519996,
+              "beats": false
+            },
+            {
+              "rmse": 0.016435347005741913,
+              "persistence_rmse": 0.013483912807134233,
+              "beats": false
+            },
+            {
+              "rmse": 0.019906185688032096,
+              "persistence_rmse": 0.018134628437264717,
+              "beats": false
+            },
+            {
+              "rmse": 0.01570058258903591,
+              "persistence_rmse": 0.01550306827085066,
+              "beats": false
+            },
+            {
+              "rmse": 0.025182733292429944,
+              "persistence_rmse": 0.02401669742207564,
+              "beats": false
+            },
+            {
+              "rmse": 0.03835809132794058,
+              "persistence_rmse": 0.02521268281924662,
+              "beats": false
+            },
+            {
+              "rmse": 0.013407425666727826,
+              "persistence_rmse": 0.013894447263616399,
+              "beats": true
+            },
+            {
+              "rmse": 0.029033579219098955,
+              "persistence_rmse": 0.02447810320340005,
+              "beats": false
+            },
+            {
+              "rmse": 0.04682377798494472,
+              "persistence_rmse": 0.04274667230772448,
+              "beats": false
+            },
+            {
+              "rmse": 0.019659787789277135,
+              "persistence_rmse": 0.020604153873098576,
+              "beats": true
+            },
+            {
+              "rmse": 0.024065443589512105,
+              "persistence_rmse": 0.019429915889196066,
+              "beats": false
+            },
+            {
+              "rmse": 0.024392198552766836,
+              "persistence_rmse": 0.01949920601559547,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 554,
+            "learning_rate": 0.058008317683053284,
+            "num_leaves": 37,
+            "max_depth": 7,
+            "min_child_samples": 40,
+            "subsample": 0.8632973073491157,
+            "colsample_bytree": 0.7952379804018835,
+            "reg_lambda": 0.39875635617989535,
+            "reg_alpha": 0.6558973821610268,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": -0.00012350741142928834,
+          "persistence_rmse": 0.018317046534176096,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.023093607639235014
+        },
+        "n_features_selected": 45,
+        "n_train": 985,
+        "n_test": 247
+      },
+      "7": {
+        "horizon": 7,
+        "symbol": "BTC",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 7,
+            "returns": {
+              "r2": -5.621386639831786,
+              "rmse": 0.15080397793757574,
+              "mae": 0.1343890828360474
+            },
+            "price": {
+              "r2": -0.03913741204985688,
+              "rmse": 11894.34795862608,
+              "mae": 10524.54924822398
+            },
+            "directional_accuracy": 0.44129554655870445,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.60136336236084,
+              "rmse": 0.09452329082375575,
+              "mae": 0.0743746989991798
+            },
+            "price": {
+              "r2": 0.5711154972291927,
+              "rmse": 7641.424485392532,
+              "mae": 5930.952606260735
+            },
+            "directional_accuracy": 0.4331983805668016,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 7,
+            "returns": {
+              "r2": -2.91539395681299,
+              "rmse": 0.11596476616012685,
+              "mae": 0.09693155976213859
+            },
+            "price": {
+              "r2": 0.36690212030523706,
+              "rmse": 9284.095053783394,
+              "mae": 7677.1507430729425
+            },
+            "directional_accuracy": 0.44534412955465585,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.0264579593577912,
+              "rmse": 0.08342709525235391,
+              "mae": 0.06304951779819129
+            },
+            "price": {
+              "r2": 0.654891001889111,
+              "rmse": 6854.602739655153,
+              "mae": 5084.927203260788
+            },
+            "directional_accuracy": 0.4493927125506073,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.6268823454351722,
+              "rmse": 0.09498578896116028,
+              "mae": 0.07535536713268746
+            },
+            "price": {
+              "r2": 0.5631961205356787,
+              "rmse": 7711.651450519647,
+              "mae": 6023.360598739862
+            },
+            "directional_accuracy": 0.4331983805668016,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.1580618677985868,
+              "rmse": 0.08609348121206549,
+              "mae": 0.06554817495879937
+            },
+            "price": {
+              "r2": 0.6271638982827501,
+              "rmse": 7124.643332659852,
+              "mae": 5307.282888384278
+            },
+            "directional_accuracy": 0.46153846153846156,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.2379107163702359,
+              "rmse": 0.08767175523800824,
+              "mae": 0.06736288863357748
+            },
+            "price": {
+              "r2": 0.6200299980550771,
+              "rmse": 7192.482341100878,
+              "mae": 5424.960650660022
+            },
+            "directional_accuracy": 0.44534412955465585,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.7613219205917865,
+              "rmse": 0.07777816514990697,
+              "mae": 0.057301554013433585
+            },
+            "price": {
+              "r2": 0.6922085434582629,
+              "rmse": 6473.399786542303,
+              "mae": 4649.5874766858105
+            },
+            "directional_accuracy": 0.46558704453441296,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.2067226192686793,
+              "rmse": 0.06437867738869436,
+              "mae": 0.049315136721451616
+            },
+            "price": {
+              "r2": 0.785727658532982,
+              "rmse": 5401.162036592405,
+              "mae": 4000.9510107820606
+            },
+            "directional_accuracy": 0.4251012145748988,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.7434013672917732,
+              "rmse": 0.07738147694051654,
+              "mae": 0.059301600626495705
+            },
+            "price": {
+              "r2": 0.6957448559518901,
+              "rmse": 6436.10489456894,
+              "mae": 4815.078379958151
+            },
+            "directional_accuracy": 0.4291497975708502,
+            "beats_persistence_rmse": false
+          }
+        ],
+        "best_model": "StackedTuned",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.0592397496906687,
+            "rmse": 0.06031640636655282,
+            "mae": 0.046804582328964325
+          },
+          "price": {
+            "r2": 0.8165544243699719,
+            "rmse": 4997.557155005975,
+            "mae": 3767.968744939272
+          },
+          "up_day_share": 0.4251012145748988
+        },
+        "direction": {
+          "accuracy": 0.46153846153846156,
+          "base_rate_up": 0.550253807106599,
+          "high_confidence_accuracy": 0.4714285714285714,
+          "high_confidence_frac": 0.8502024291497976,
+          "mean_prob_up": 0.8417043363203343
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.12052967669725807
+        },
+        "paper": {
+          "best": {
+            "mode": "long_flat",
+            "net_sharpe": 0.0,
+            "gross_sharpe": 0.0,
+            "max_drawdown": 0.0,
+            "n_trades": 0,
+            "hit_rate": 0.5,
+            "mean_net_return": 0.0,
+            "final_equity": 100000.0,
+            "cost_drag": 0.0
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": 0.0,
+              "gross_sharpe": 0.0,
+              "max_drawdown": 0.0,
+              "n_trades": 0,
+              "hit_rate": 0.5,
+              "mean_net_return": 0.0,
+              "final_equity": 100000.0,
+              "cost_drag": 0.0
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": 0.0,
+              "gross_sharpe": 0.0,
+              "max_drawdown": 0.0,
+              "n_trades": 0,
+              "hit_rate": 0.5,
+              "mean_net_return": 0.0,
+              "final_equity": 100000.0,
+              "cost_drag": 0.0
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 33,
+          "pass_frac": 0.18181818181818182,
+          "fold_rmse": [
+            {
+              "rmse": 0.07920686696750179,
+              "persistence_rmse": 0.06646756072633954,
+              "beats": false
+            },
+            {
+              "rmse": 0.09807561818027512,
+              "persistence_rmse": 0.07634538333311779,
+              "beats": false
+            },
+            {
+              "rmse": 0.07158211053077392,
+              "persistence_rmse": 0.07306096993974896,
+              "beats": true
+            },
+            {
+              "rmse": 0.086648715836314,
+              "persistence_rmse": 0.05023477902043639,
+              "beats": false
+            },
+            {
+              "rmse": 0.07239831561298973,
+              "persistence_rmse": 0.08414776738546684,
+              "beats": true
+            },
+            {
+              "rmse": 0.17012547477439802,
+              "persistence_rmse": 0.11970545896263944,
+              "beats": false
+            },
+            {
+              "rmse": 0.15147358669564065,
+              "persistence_rmse": 0.0634808982103502,
+              "beats": false
+            },
+            {
+              "rmse": 0.09625040111455263,
+              "persistence_rmse": 0.0633045055351411,
+              "beats": false
+            },
+            {
+              "rmse": 0.033078549287028504,
+              "persistence_rmse": 0.03460369448389626,
+              "beats": true
+            },
+            {
+              "rmse": 0.10304708854325347,
+              "persistence_rmse": 0.07725483827772187,
+              "beats": false
+            },
+            {
+              "rmse": 0.09297602630983351,
+              "persistence_rmse": 0.0757884805907394,
+              "beats": false
+            },
+            {
+              "rmse": 0.07777772937103933,
+              "persistence_rmse": 0.06466855114077126,
+              "beats": false
+            },
+            {
+              "rmse": 0.06403605956721325,
+              "persistence_rmse": 0.057978416235209,
+              "beats": false
+            },
+            {
+              "rmse": 0.1858863550334548,
+              "persistence_rmse": 0.1171568416352239,
+              "beats": false
+            },
+            {
+              "rmse": 0.11218063987544144,
+              "persistence_rmse": 0.04959454575988682,
+              "beats": false
+            },
+            {
+              "rmse": 0.05649851350311404,
+              "persistence_rmse": 0.050427083548010995,
+              "beats": false
+            },
+            {
+              "rmse": 0.07609601144388997,
+              "persistence_rmse": 0.04868438926633769,
+              "beats": false
+            },
+            {
+              "rmse": 0.0789918808595736,
+              "persistence_rmse": 0.06834296156768062,
+              "beats": false
+            },
+            {
+              "rmse": 0.034975054560289175,
+              "persistence_rmse": 0.0441770600177742,
+              "beats": true
+            },
+            {
+              "rmse": 0.08223189121565452,
+              "persistence_rmse": 0.06807797025165312,
+              "beats": false
+            },
+            {
+              "rmse": 0.04390822114144571,
+              "persistence_rmse": 0.03414022238475014,
+              "beats": false
+            },
+            {
+              "rmse": 0.07588247146192613,
+              "persistence_rmse": 0.04720412407738164,
+              "beats": false
+            },
+            {
+              "rmse": 0.045947904891740984,
+              "persistence_rmse": 0.03092661470838793,
+              "beats": false
+            },
+            {
+              "rmse": 0.03829525472969129,
+              "persistence_rmse": 0.03554565754764349,
+              "beats": false
+            },
+            {
+              "rmse": 0.05872334013576006,
+              "persistence_rmse": 0.06039458508111189,
+              "beats": true
+            },
+            {
+              "rmse": 0.04900945887331197,
+              "persistence_rmse": 0.05315641311231049,
+              "beats": true
+            },
+            {
+              "rmse": 0.1008930135889826,
+              "persistence_rmse": 0.06648938905148868,
+              "beats": false
+            },
+            {
+              "rmse": 0.0479354960178746,
+              "persistence_rmse": 0.0340012630857231,
+              "beats": false
+            },
+            {
+              "rmse": 0.12330545049983495,
+              "persistence_rmse": 0.09666706010958369,
+              "beats": false
+            },
+            {
+              "rmse": 0.07075059561901095,
+              "persistence_rmse": 0.03678972874448256,
+              "beats": false
+            },
+            {
+              "rmse": 0.05836147407248437,
+              "persistence_rmse": 0.05213661155811529,
+              "beats": false
+            },
+            {
+              "rmse": 0.0428074353025335,
+              "persistence_rmse": 0.04016347590282685,
+              "beats": false
+            },
+            {
+              "rmse": 0.1000498373212901,
+              "persistence_rmse": 0.07761086623128027,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 431,
+            "learning_rate": 0.02325951592241212,
+            "num_leaves": 37,
+            "max_depth": 5,
+            "min_child_samples": 23,
+            "subsample": 0.9847923138822793,
+            "colsample_bytree": 0.8650796940166687,
+            "reg_lambda": 6.584106160121612,
+            "reg_alpha": 0.8991909447343748,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": 0.0015228225417236382,
+          "persistence_rmse": 0.04869831926251008,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.023093607639235014
+        },
+        "n_features_selected": 45,
+        "n_train": 985,
+        "n_test": 247
+      },
+      "30": {
+        "horizon": 30,
+        "symbol": "BTC",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 30,
+            "returns": {
+              "r2": -4.657851648024145,
+              "rmse": 0.29058964673947996,
+              "mae": 0.2684371829346602
+            },
+            "price": {
+              "r2": -4.014504105454353,
+              "rmse": 23391.07866077063,
+              "mae": 21278.3651223374
+            },
+            "directional_accuracy": 0.4493927125506073,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 30,
+            "returns": {
+              "r2": -3.262015320276201,
+              "rmse": 0.25220974458903683,
+              "mae": 0.22797795308790028
+            },
+            "price": {
+              "r2": -2.863737840554228,
+              "rmse": 20532.417167788935,
+              "mae": 18178.43623500959
+            },
+            "directional_accuracy": 0.4534412955465587,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 30,
+            "returns": {
+              "r2": -4.052033939835758,
+              "rmse": 0.27459175249251433,
+              "mae": 0.25144244555287065
+            },
+            "price": {
+              "r2": -3.5279538416351963,
+              "rmse": 22227.327540658516,
+              "mae": 19988.240246928523
+            },
+            "directional_accuracy": 0.4493927125506073,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 30,
+            "returns": {
+              "r2": -1.5031208397742541,
+              "rmse": 0.19328371620346724,
+              "mae": 0.14638461001455677
+            },
+            "price": {
+              "r2": -1.1280036226243917,
+              "rmse": 15237.80583242749,
+              "mae": 11485.23879932414
+            },
+            "directional_accuracy": 0.611336032388664,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -2.212048511953964,
+              "rmse": 0.21895023063971703,
+              "mae": 0.1668133222159804
+            },
+            "price": {
+              "r2": -1.8748873117271412,
+              "rmse": 17711.146152290505,
+              "mae": 13309.470983957748
+            },
+            "directional_accuracy": 0.5182186234817814,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 30,
+            "returns": {
+              "r2": -1.342878442838237,
+              "rmse": 0.18699467407598525,
+              "mae": 0.1414990929383704
+            },
+            "price": {
+              "r2": -1.080254725349548,
+              "rmse": 15065.88029331286,
+              "mae": 11218.274931134796
+            },
+            "directional_accuracy": 0.5748987854251012,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 30,
+            "returns": {
+              "r2": -1.6234046427763773,
+              "rmse": 0.1978732105953174,
+              "mae": 0.14895900240323262
+            },
+            "price": {
+              "r2": -1.2977648606603154,
+              "rmse": 15833.94184710772,
+              "mae": 11775.78319303568
+            },
+            "directional_accuracy": 0.5425101214574899,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -1.2388561929969804,
+              "rmse": 0.1827963242251418,
+              "mae": 0.13829304905249815
+            },
+            "price": {
+              "r2": -1.0490070951299608,
+              "rmse": 14952.299410214748,
+              "mae": 11091.96838533354
+            },
+            "directional_accuracy": 0.5587044534412956,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 30,
+            "returns": {
+              "r2": -0.5606320772607445,
+              "rmse": 0.15261760137900846,
+              "mae": 0.11619703775360345
+            },
+            "price": {
+              "r2": -0.6650625724047485,
+              "rmse": 13478.809433121702,
+              "mae": 9870.517769313403
+            },
+            "directional_accuracy": 0.43724696356275305,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -0.08914181868244775,
+              "rmse": 0.1274960047601073,
+              "mae": 0.0982683842898262
+            },
+            "price": {
+              "r2": 0.01965685276286777,
+              "rmse": 10342.494830697568,
+              "mae": 7849.2498662661465
+            },
+            "directional_accuracy": 0.6396761133603239,
+            "beats_persistence_rmse": true
+          }
+        ],
+        "best_model": "RegimeLGBM",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.12906857436539076,
+            "rmse": 0.1298119037099715,
+            "mae": 0.09978798795898268
+          },
+          "price": {
+            "r2": -0.14670337768515007,
+            "rmse": 11185.664773333316,
+            "mae": 8283.721497975708
+          },
+          "up_day_share": 0.43724696356275305
+        },
+        "direction": {
+          "accuracy": 0.43724696356275305,
+          "base_rate_up": 0.5888324873096447,
+          "high_confidence_accuracy": 0.43902439024390244,
+          "high_confidence_frac": 0.9959514170040485,
+          "mean_prob_up": 0.9836645258273016
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.3664878170908892
+        },
+        "paper": {
+          "best": {
+            "mode": "long_short",
+            "net_sharpe": 5.393724528327753,
+            "gross_sharpe": 5.624708731202763,
+            "max_drawdown": -0.60605936832049,
+            "n_trades": 162,
+            "hit_rate": 0.7152777777777778,
+            "mean_net_return": 0.008800842810306048,
+            "final_equity": 775367.4660781961,
+            "cost_drag": 0.0003295484751686337
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": -1.2568184004535043,
+              "gross_sharpe": -1.0019504298067727,
+              "max_drawdown": -0.6060593683204898,
+              "n_trades": 98,
+              "hit_rate": 0.5952380952380952,
+              "mean_net_return": -0.0011234615629473008,
+              "final_equity": 72987.5630868158,
+              "cost_drag": 0.00023932181114196658
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": 5.393724528327753,
+              "gross_sharpe": 5.624708731202763,
+              "max_drawdown": -0.60605936832049,
+              "n_trades": 162,
+              "hit_rate": 0.7152777777777778,
+              "mean_net_return": 0.008800842810306048,
+              "final_equity": 775367.4660781961,
+              "cost_drag": 0.0003295484751686337
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 33,
+          "pass_frac": 0.30303030303030304,
+          "fold_rmse": [
+            {
+              "rmse": 0.17363710567464036,
+              "persistence_rmse": 0.2769264165352623,
+              "beats": true
+            },
+            {
+              "rmse": 0.21406587154296716,
+              "persistence_rmse": 0.1780979171650433,
+              "beats": false
+            },
+            {
+              "rmse": 0.17597817114309866,
+              "persistence_rmse": 0.11697711386948698,
+              "beats": false
+            },
+            {
+              "rmse": 0.07245703315593166,
+              "persistence_rmse": 0.07717995193193457,
+              "beats": true
+            },
+            {
+              "rmse": 0.33339843892154464,
+              "persistence_rmse": 0.4055983197065561,
+              "beats": true
+            },
+            {
+              "rmse": 0.1942286033264116,
+              "persistence_rmse": 0.19638868056480896,
+              "beats": true
+            },
+            {
+              "rmse": 0.5392747878737367,
+              "persistence_rmse": 0.08765079845195801,
+              "beats": false
+            },
+            {
+              "rmse": 0.14855124420007393,
+              "persistence_rmse": 0.09653734412037983,
+              "beats": false
+            },
+            {
+              "rmse": 0.24741532879955827,
+              "persistence_rmse": 0.11987493229203336,
+              "beats": false
+            },
+            {
+              "rmse": 0.1486320427325558,
+              "persistence_rmse": 0.060680022402363,
+              "beats": false
+            },
+            {
+              "rmse": 0.17270694238475423,
+              "persistence_rmse": 0.08252177184777676,
+              "beats": false
+            },
+            {
+              "rmse": 0.07638082171448078,
+              "persistence_rmse": 0.07565199876209046,
+              "beats": false
+            },
+            {
+              "rmse": 0.07732873618234193,
+              "persistence_rmse": 0.138744836338726,
+              "beats": true
+            },
+            {
+              "rmse": 0.46468411529516074,
+              "persistence_rmse": 0.3722191843213365,
+              "beats": false
+            },
+            {
+              "rmse": 0.18254442513091668,
+              "persistence_rmse": 0.08107795324526262,
+              "beats": false
+            },
+            {
+              "rmse": 0.06129983632710458,
+              "persistence_rmse": 0.06845550861492544,
+              "beats": true
+            },
+            {
+              "rmse": 0.1425083378211675,
+              "persistence_rmse": 0.10717943259286095,
+              "beats": false
+            },
+            {
+              "rmse": 0.15279826910218738,
+              "persistence_rmse": 0.10048049911081162,
+              "beats": false
+            },
+            {
+              "rmse": 0.11951923643591461,
+              "persistence_rmse": 0.13112409888977986,
+              "beats": true
+            },
+            {
+              "rmse": 0.2274011222343375,
+              "persistence_rmse": 0.18129489413102087,
+              "beats": false
+            },
+            {
+              "rmse": 0.08078680054355654,
+              "persistence_rmse": 0.037918503401990385,
+              "beats": false
+            },
+            {
+              "rmse": 0.22755526615668592,
+              "persistence_rmse": 0.10474878763246293,
+              "beats": false
+            },
+            {
+              "rmse": 0.10616063067689992,
+              "persistence_rmse": 0.03954877457510886,
+              "beats": false
+            },
+            {
+              "rmse": 0.047500197756226006,
+              "persistence_rmse": 0.05579250557915337,
+              "beats": true
+            },
+            {
+              "rmse": 0.09920844486702673,
+              "persistence_rmse": 0.07540982534342319,
+              "beats": false
+            },
+            {
+              "rmse": 0.20961920077860277,
+              "persistence_rmse": 0.16505803271612474,
+              "beats": false
+            },
+            {
+              "rmse": 0.10708412177550729,
+              "persistence_rmse": 0.07030546898993535,
+              "beats": false
+            },
+            {
+              "rmse": 0.08004337465930515,
+              "persistence_rmse": 0.07128215447351653,
+              "beats": false
+            },
+            {
+              "rmse": 0.31025640817036515,
+              "persistence_rmse": 0.24111100881496375,
+              "beats": false
+            },
+            {
+              "rmse": 0.09217360699684855,
+              "persistence_rmse": 0.05050982800399402,
+              "beats": false
+            },
+            {
+              "rmse": 0.060946148121336495,
+              "persistence_rmse": 0.10684213446974618,
+              "beats": true
+            },
+            {
+              "rmse": 0.08433696996886685,
+              "persistence_rmse": 0.09290152155122562,
+              "beats": true
+            },
+            {
+              "rmse": 0.24585846786471688,
+              "persistence_rmse": 0.19105416806311656,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 591,
+            "learning_rate": 0.015956430342152043,
+            "num_leaves": 18,
+            "max_depth": 3,
+            "min_child_samples": 39,
+            "subsample": 0.9155722000942043,
+            "colsample_bytree": 0.8705466679437454,
+            "reg_lambda": 0.33175624654189984,
+            "reg_alpha": 0.01242298122871809,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": -0.00896338742045999,
+          "persistence_rmse": 0.09530060368914238,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.023093607639235014
+        },
+        "n_features_selected": 45,
+        "n_train": 985,
+        "n_test": 247
+      }
+    },
+    "summary": [
+      {
+        "horizon": 1,
+        "label": "next_day",
+        "best_model": "StackedTuned",
+        "ret_rmse": 0.024813538063418107,
+        "persistence_rmse": 0.024614810206072514,
+        "beats_persistence": false,
+        "directional_accuracy": 0.4534412955465587,
+        "direction_classifier_acc": 0.46963562753036436,
+        "direction_high_conf_acc": 0.4304635761589404,
+        "paper_best_mode": "long_flat",
+        "paper_net_sharpe": 0.0,
+        "wf_pass_frac": 0.18181818181818182,
+        "trustworthy": false
+      },
+      {
+        "horizon": 7,
+        "label": "next_week",
+        "best_model": "StackedTuned",
+        "ret_rmse": 0.06437867738869436,
+        "persistence_rmse": 0.06031640636655282,
+        "beats_persistence": false,
+        "directional_accuracy": 0.4251012145748988,
+        "direction_classifier_acc": 0.46153846153846156,
+        "direction_high_conf_acc": 0.4714285714285714,
+        "paper_best_mode": "long_flat",
+        "paper_net_sharpe": 0.0,
+        "wf_pass_frac": 0.18181818181818182,
+        "trustworthy": false
+      },
+      {
+        "horizon": 30,
+        "label": "next_month",
+        "best_model": "RegimeLGBM",
+        "ret_rmse": 0.1274960047601073,
+        "persistence_rmse": 0.1298119037099715,
+        "beats_persistence": true,
+        "directional_accuracy": 0.6396761133603239,
+        "direction_classifier_acc": 0.43724696356275305,
+        "direction_high_conf_acc": 0.43902439024390244,
+        "paper_best_mode": "long_short",
+        "paper_net_sharpe": 5.393724528327753,
+        "wf_pass_frac": 0.30303030303030304,
+        "trustworthy": false
+      }
+    ],
+    "live_forecasts": [
+      {
+        "horizon_days": 1,
+        "horizon_label": "1D",
+        "as_of": "2026-07-30",
+        "current_price": 64856.38,
+        "predicted_price": 64545.200678085195,
+        "predicted_price_p10": 64218.87680795249,
+        "predicted_price_p90": 64871.52454821791,
+        "predicted_return_pct": -0.47979754946976927,
+        "predicted_return_p10_pct": -0.9829459986010771,
+        "predicted_return_p90_pct": 0.02335089966153869,
+        "direction_prob_up": 0.6235439073025482,
+        "confidence": 0.24708781460509632,
+        "model": "Ensemble",
+        "holdout_beats_persistence": false,
+        "holdout_directional_accuracy": 0.4534412955465587,
+        "holdout_ret_rmse": 0.024813538063418107,
+        "persistence_ret_rmse": 0.024614810206072514,
+        "wf_pass_frac": 0.18181818181818182,
+        "trustworthy": false
+      },
+      {
+        "horizon_days": 7,
+        "horizon_label": "1W",
+        "as_of": "2026-07-30",
+        "current_price": 64856.38,
+        "predicted_price": 64365.567535726535,
+        "predicted_price_p10": 63970.93235777693,
+        "predicted_price_p90": 64760.202713676146,
+        "predicted_return_pct": -0.7567682073428414,
+        "predicted_return_p10_pct": -1.3652437003469304,
+        "predicted_return_p90_pct": -0.14829271433875252,
+        "direction_prob_up": 0.497507768854425,
+        "confidence": 0.004984462291150016,
+        "model": "Ensemble",
+        "holdout_beats_persistence": false,
+        "holdout_directional_accuracy": 0.4251012145748988,
+        "holdout_ret_rmse": 0.06437867738869436,
+        "persistence_ret_rmse": 0.06031640636655282,
+        "wf_pass_frac": 0.18181818181818182,
+        "trustworthy": false
+      },
+      {
+        "horizon_days": 30,
+        "horizon_label": "1M",
+        "as_of": "2026-07-30",
+        "current_price": 64856.38,
+        "predicted_price": 70939.32253353638,
+        "predicted_price_p10": 70603.83333824384,
+        "predicted_price_p90": 71274.81172882894,
+        "predicted_return_pct": 9.379096603196766,
+        "predicted_return_p10_pct": 8.861816429230005,
+        "predicted_return_p90_pct": 9.896376777163528,
+        "direction_prob_up": 0.7953178715970013,
+        "confidence": 0.5906357431940026,
+        "model": "Ensemble",
+        "holdout_beats_persistence": true,
+        "holdout_directional_accuracy": 0.6396761133603239,
+        "holdout_ret_rmse": 0.1274960047601073,
+        "persistence_ret_rmse": 0.1298119037099715,
+        "wf_pass_frac": 0.30303030303030304,
+        "trustworthy": false
+      }
+    ]
+  },
+  "ETH": {
+    "by_horizon": {
+      "1": {
+        "horizon": 1,
+        "symbol": "ETH",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.6766691616853135,
+              "rmse": 0.04377008064306918,
+              "mae": 0.03215551573716768
+            },
+            "price": {
+              "r2": 0.9640351912528257,
+              "rmse": 110.53306520668419,
+              "mae": 78.84687757559254
+            },
+            "directional_accuracy": 0.46747967479674796,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.4661292286688321,
+              "rmse": 0.0409298152593448,
+              "mae": 0.03046364245721429
+            },
+            "price": {
+              "r2": 0.9682531765396344,
+              "rmse": 103.84927634004097,
+              "mae": 75.2109869358575
+            },
+            "directional_accuracy": 0.4878048780487805,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.6874442766055489,
+              "rmse": 0.04391049962255047,
+              "mae": 0.03315091167549859
+            },
+            "price": {
+              "r2": 0.9635108814335044,
+              "rmse": 111.3358482801105,
+              "mae": 81.7751543027726
+            },
+            "directional_accuracy": 0.47560975609756095,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.8425982709506725,
+              "rmse": 0.0458848153249114,
+              "mae": 0.03303875957196696
+            },
+            "price": {
+              "r2": 0.963843523759684,
+              "rmse": 110.82720613338628,
+              "mae": 79.97927285971106
+            },
+            "directional_accuracy": 0.508130081300813,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.6244792436560798,
+              "rmse": 0.04308347665612427,
+              "mae": 0.03019080020289795
+            },
+            "price": {
+              "r2": 0.9674620299044044,
+              "rmse": 105.13530136469628,
+              "mae": 73.56859724408412
+            },
+            "directional_accuracy": 0.5203252032520326,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.49107775881998306,
+              "rmse": 0.04127658933828673,
+              "mae": 0.02852421327810056
+            },
+            "price": {
+              "r2": 0.9695341797906935,
+              "rmse": 101.73251321201488,
+              "mae": 69.82208570887423
+            },
+            "directional_accuracy": 0.5040650406504065,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.603251917673209,
+              "rmse": 0.042801061746769814,
+              "mae": 0.029802067178449836
+            },
+            "price": {
+              "r2": 0.9677742080699838,
+              "rmse": 104.62973742471458,
+              "mae": 72.72856272896777
+            },
+            "directional_accuracy": 0.5121951219512195,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.14969233536226123,
+              "rmse": 0.03624469725295986,
+              "mae": 0.02585340268484313
+            },
+            "price": {
+              "r2": 0.9757414249835845,
+              "rmse": 90.77912224617326,
+              "mae": 63.57990874042433
+            },
+            "directional_accuracy": 0.5284552845528455,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.0176232883278733,
+              "rmse": 0.03409943452503871,
+              "mae": 0.024039540652772987
+            },
+            "price": {
+              "r2": 0.9780959410328941,
+              "rmse": 86.26122793231667,
+              "mae": 59.77614483221254
+            },
+            "directional_accuracy": 0.4715447154471545,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.08550534948453747,
+              "rmse": 0.03521840168311352,
+              "mae": 0.02488239438368576
+            },
+            "price": {
+              "r2": 0.9765218762186026,
+              "rmse": 89.30690320247191,
+              "mae": 61.80332437090003
+            },
+            "directional_accuracy": 0.4878048780487805,
+            "beats_persistence_rmse": false
+          }
+        ],
+        "best_model": "StackedTuned",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.009120558755473906,
+            "rmse": 0.03395667715085514,
+            "mae": 0.023920390317575427
+          },
+          "price": {
+            "r2": 0.9783675345846032,
+            "rmse": 85.72477326547447,
+            "mae": 59.442672064777334
+          },
+          "up_day_share": 0.46963562753036436
+        },
+        "direction": {
+          "accuracy": 0.4817813765182186,
+          "base_rate_up": 0.5086294416243655,
+          "high_confidence_accuracy": 0.5206611570247934,
+          "high_confidence_frac": 0.4898785425101215,
+          "mean_prob_up": 0.4698843660584663
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.09143548963227793
+        },
+        "paper": {
+          "best": {
+            "mode": "long_flat",
+            "net_sharpe": 0.0,
+            "gross_sharpe": 0.0,
+            "max_drawdown": 0.0,
+            "n_trades": 0,
+            "hit_rate": 0.5,
+            "mean_net_return": 0.0,
+            "final_equity": 100000.0,
+            "cost_drag": 0.0
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": 0.0,
+              "gross_sharpe": 0.0,
+              "max_drawdown": 0.0,
+              "n_trades": 0,
+              "hit_rate": 0.5,
+              "mean_net_return": 0.0,
+              "final_equity": 100000.0,
+              "cost_drag": 0.0
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": 0.0,
+              "gross_sharpe": 0.0,
+              "max_drawdown": 0.0,
+              "n_trades": 0,
+              "hit_rate": 0.5,
+              "mean_net_return": 0.0,
+              "final_equity": 100000.0,
+              "cost_drag": 0.0
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 33,
+          "pass_frac": 0.09090909090909091,
+          "fold_rmse": [
+            {
+              "rmse": 0.02030817771819081,
+              "persistence_rmse": 0.017274775859271656,
+              "beats": false
+            },
+            {
+              "rmse": 0.028127736482990415,
+              "persistence_rmse": 0.03076260724905395,
+              "beats": true
+            },
+            {
+              "rmse": 0.028336759039023992,
+              "persistence_rmse": 0.026445958967790378,
+              "beats": false
+            },
+            {
+              "rmse": 0.02989395823554129,
+              "persistence_rmse": 0.032608195267114795,
+              "beats": true
+            },
+            {
+              "rmse": 0.02527089242601793,
+              "persistence_rmse": 0.02377862598371177,
+              "beats": false
+            },
+            {
+              "rmse": 0.0417246456786409,
+              "persistence_rmse": 0.0292695520830608,
+              "beats": false
+            },
+            {
+              "rmse": 0.047785225848635635,
+              "persistence_rmse": 0.04524656049449506,
+              "beats": false
+            },
+            {
+              "rmse": 0.029895396443993045,
+              "persistence_rmse": 0.02465146838976853,
+              "beats": false
+            },
+            {
+              "rmse": 0.040453369044229706,
+              "persistence_rmse": 0.040518543022440776,
+              "beats": true
+            },
+            {
+              "rmse": 0.029507731333647775,
+              "persistence_rmse": 0.023687795822188763,
+              "beats": false
+            },
+            {
+              "rmse": 0.04946528155223781,
+              "persistence_rmse": 0.04597487117355347,
+              "beats": false
+            },
+            {
+              "rmse": 0.032586387824864074,
+              "persistence_rmse": 0.029583449881497415,
+              "beats": false
+            },
+            {
+              "rmse": 0.025954361854401704,
+              "persistence_rmse": 0.02416737791757096,
+              "beats": false
+            },
+            {
+              "rmse": 0.03808919624141875,
+              "persistence_rmse": 0.03778469265537024,
+              "beats": false
+            },
+            {
+              "rmse": 0.039988051484771935,
+              "persistence_rmse": 0.038986351500602145,
+              "beats": false
+            },
+            {
+              "rmse": 0.03182976353682396,
+              "persistence_rmse": 0.030897833335564586,
+              "beats": false
+            },
+            {
+              "rmse": 0.03556418718040995,
+              "persistence_rmse": 0.0346767598045184,
+              "beats": false
+            },
+            {
+              "rmse": 0.055192698337438395,
+              "persistence_rmse": 0.052776199501809125,
+              "beats": false
+            },
+            {
+              "rmse": 0.05002172229239373,
+              "persistence_rmse": 0.0465652771480425,
+              "beats": false
+            },
+            {
+              "rmse": 0.0546771336816658,
+              "persistence_rmse": 0.05242652470478311,
+              "beats": false
+            },
+            {
+              "rmse": 0.03339188142918223,
+              "persistence_rmse": 0.030819884305448894,
+              "beats": false
+            },
+            {
+              "rmse": 0.0343628524440488,
+              "persistence_rmse": 0.03211625697029664,
+              "beats": false
+            },
+            {
+              "rmse": 0.03609844629146494,
+              "persistence_rmse": 0.033820647380292876,
+              "beats": false
+            },
+            {
+              "rmse": 0.046613422254982655,
+              "persistence_rmse": 0.044292415876006117,
+              "beats": false
+            },
+            {
+              "rmse": 0.03475566646769646,
+              "persistence_rmse": 0.028315650035353312,
+              "beats": false
+            },
+            {
+              "rmse": 0.046845125817172484,
+              "persistence_rmse": 0.04319214318542112,
+              "beats": false
+            },
+            {
+              "rmse": 0.03774551441049802,
+              "persistence_rmse": 0.035149429450783684,
+              "beats": false
+            },
+            {
+              "rmse": 0.026742062403484753,
+              "persistence_rmse": 0.02370704016179814,
+              "beats": false
+            },
+            {
+              "rmse": 0.049881793650158816,
+              "persistence_rmse": 0.03900557899301145,
+              "beats": false
+            },
+            {
+              "rmse": 0.05515434704939784,
+              "persistence_rmse": 0.051221630131375644,
+              "beats": false
+            },
+            {
+              "rmse": 0.029145817543817017,
+              "persistence_rmse": 0.02865195615218614,
+              "beats": false
+            },
+            {
+              "rmse": 0.027346854930037478,
+              "persistence_rmse": 0.0264214966997322,
+              "beats": false
+            },
+            {
+              "rmse": 0.02806187520142862,
+              "persistence_rmse": 0.02113202707822581,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 114,
+            "learning_rate": 0.028992133231857488,
+            "num_leaves": 17,
+            "max_depth": 7,
+            "min_child_samples": 15,
+            "subsample": 0.7667213955607541,
+            "colsample_bytree": 0.9136438235625026,
+            "reg_lambda": 2.782798249640322,
+            "reg_alpha": 0.966632359939748,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": 0.0005972289272701825,
+          "persistence_rmse": 0.03881026278087436,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.031130793975425845
+        },
+        "n_features_selected": 45,
+        "n_train": 985,
+        "n_test": 247
+      },
+      "7": {
+        "horizon": 7,
+        "symbol": "ETH",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.9705340943007181,
+              "rmse": 0.13928214835460667,
+              "mae": 0.10042821707681916
+            },
+            "price": {
+              "r2": 0.599397077495796,
+              "rmse": 346.7769830082559,
+              "mae": 242.8637186114931
+            },
+            "directional_accuracy": 0.42105263157894735,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.6728261831556699,
+              "rmse": 0.1321184727582862,
+              "mae": 0.09677841079399074
+            },
+            "price": {
+              "r2": 0.6400029324950423,
+              "rmse": 328.73253499803553,
+              "mae": 234.49553024440522
+            },
+            "directional_accuracy": 0.42105263157894735,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.7175089265152295,
+              "rmse": 0.1332182351532421,
+              "mae": 0.09869380028073929
+            },
+            "price": {
+              "r2": 0.6341221729054389,
+              "rmse": 331.40667604400954,
+              "mae": 239.3260965057189
+            },
+            "directional_accuracy": 0.4048582995951417,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 7,
+            "returns": {
+              "r2": -1.0419592741915142,
+              "rmse": 0.11547865695310741,
+              "mae": 0.08975147820873908
+            },
+            "price": {
+              "r2": 0.7168626593780828,
+              "rmse": 291.53572529443454,
+              "mae": 222.53665923075042
+            },
+            "directional_accuracy": 0.38866396761133604,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.916090181133765,
+              "rmse": 0.11186292186554163,
+              "mae": 0.08892548619006017
+            },
+            "price": {
+              "r2": 0.7336821392369623,
+              "rmse": 282.74397158865185,
+              "mae": 220.6642308891269
+            },
+            "directional_accuracy": 0.3967611336032389,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.7900150806724497,
+              "rmse": 0.10812012302417257,
+              "mae": 0.08530891636740698
+            },
+            "price": {
+              "r2": 0.7477507467474014,
+              "rmse": 275.1744783602634,
+              "mae": 213.2360497958446
+            },
+            "directional_accuracy": 0.4048582995951417,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.8782513720807741,
+              "rmse": 0.11075288389360971,
+              "mae": 0.08744894195789331
+            },
+            "price": {
+              "r2": 0.7372292264419362,
+              "rmse": 280.8547265126401,
+              "mae": 217.6022314922307
+            },
+            "directional_accuracy": 0.38866396761133604,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.5762277631755055,
+              "rmse": 0.10145832137017131,
+              "mae": 0.07448349105200093
+            },
+            "price": {
+              "r2": 0.7676758546017476,
+              "rmse": 264.0829613401612,
+              "mae": 187.2046868265007
+            },
+            "directional_accuracy": 0.47368421052631576,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.15338670514695507,
+              "rmse": 0.08678919432764355,
+              "mae": 0.06547821261640019
+            },
+            "price": {
+              "r2": 0.8147560634952818,
+              "rmse": 235.81162329491315,
+              "mae": 167.39246472492314
+            },
+            "directional_accuracy": 0.4493927125506073,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.7971855167828654,
+              "rmse": 0.1083364601941824,
+              "mae": 0.0800016757397146
+            },
+            "price": {
+              "r2": 0.7470634767241457,
+              "rmse": 275.54908903982647,
+              "mae": 197.5025614316582
+            },
+            "directional_accuracy": 0.47368421052631576,
+            "beats_persistence_rmse": false
+          }
+        ],
+        "best_model": "StackedTuned",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.05662512852375423,
+            "rmse": 0.08306893712362907,
+            "mae": 0.06294841647259052
+          },
+          "price": {
+            "r2": 0.8298752909670609,
+            "rmse": 225.9835907034103,
+            "mae": 161.01182186234814
+          },
+          "up_day_share": 0.42105263157894735
+        },
+        "direction": {
+          "accuracy": 0.5222672064777328,
+          "base_rate_up": 0.5106598984771573,
+          "high_confidence_accuracy": 0.5032258064516129,
+          "high_confidence_frac": 0.6275303643724697,
+          "mean_prob_up": 0.4998175789658517
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.22042897640390696
+        },
+        "paper": {
+          "best": {
+            "mode": "long_flat",
+            "net_sharpe": -3.607557828933514,
+            "gross_sharpe": -3.4680738094813752,
+            "max_drawdown": -0.31070464705091916,
+            "n_trades": 17,
+            "hit_rate": 0.0,
+            "mean_net_return": -0.0014737832740784058,
+            "final_equity": 68929.53529490808,
+            "cost_drag": 8.580453572210387e-05
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": -3.607557828933514,
+              "gross_sharpe": -3.4680738094813752,
+              "max_drawdown": -0.31070464705091916,
+              "n_trades": 17,
+              "hit_rate": 0.0,
+              "mean_net_return": -0.0014737832740784058,
+              "final_equity": 68929.53529490808,
+              "cost_drag": 8.580453572210387e-05
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": -3.607557828933514,
+              "gross_sharpe": -3.4680738094813752,
+              "max_drawdown": -0.31070464705091916,
+              "n_trades": 17,
+              "hit_rate": 0.0,
+              "mean_net_return": -0.0014737832740784058,
+              "final_equity": 68929.53529490808,
+              "cost_drag": 8.580453572210387e-05
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 33,
+          "pass_frac": 0.2727272727272727,
+          "fold_rmse": [
+            {
+              "rmse": 0.045204316519805304,
+              "persistence_rmse": 0.05287416861429918,
+              "beats": true
+            },
+            {
+              "rmse": 0.06772319970992423,
+              "persistence_rmse": 0.07758370637689342,
+              "beats": true
+            },
+            {
+              "rmse": 0.07255614659363571,
+              "persistence_rmse": 0.06368012867965309,
+              "beats": false
+            },
+            {
+              "rmse": 0.06867628171904733,
+              "persistence_rmse": 0.07096629782167002,
+              "beats": true
+            },
+            {
+              "rmse": 0.11238227431707846,
+              "persistence_rmse": 0.09529153581817362,
+              "beats": false
+            },
+            {
+              "rmse": 0.1671125371897102,
+              "persistence_rmse": 0.11495310171357073,
+              "beats": false
+            },
+            {
+              "rmse": 0.16949611433874384,
+              "persistence_rmse": 0.07657037928878456,
+              "beats": false
+            },
+            {
+              "rmse": 0.09707650408970793,
+              "persistence_rmse": 0.08398243070922679,
+              "beats": false
+            },
+            {
+              "rmse": 0.10897689582469718,
+              "persistence_rmse": 0.10222438665749299,
+              "beats": false
+            },
+            {
+              "rmse": 0.1430242697934177,
+              "persistence_rmse": 0.08133483007988673,
+              "beats": false
+            },
+            {
+              "rmse": 0.1404478158479386,
+              "persistence_rmse": 0.11534766272334436,
+              "beats": false
+            },
+            {
+              "rmse": 0.059979424225281824,
+              "persistence_rmse": 0.05901423557260101,
+              "beats": false
+            },
+            {
+              "rmse": 0.0680930417607999,
+              "persistence_rmse": 0.07680675218921569,
+              "beats": true
+            },
+            {
+              "rmse": 0.12042419018067502,
+              "persistence_rmse": 0.13928060126721536,
+              "beats": true
+            },
+            {
+              "rmse": 0.11789900823401832,
+              "persistence_rmse": 0.07506401477448083,
+              "beats": false
+            },
+            {
+              "rmse": 0.06137691404216052,
+              "persistence_rmse": 0.0837885443323925,
+              "beats": true
+            },
+            {
+              "rmse": 0.08118959775665498,
+              "persistence_rmse": 0.0784854569749341,
+              "beats": false
+            },
+            {
+              "rmse": 0.14662697133711272,
+              "persistence_rmse": 0.10484307429808812,
+              "beats": false
+            },
+            {
+              "rmse": 0.11679631196084644,
+              "persistence_rmse": 0.0908160933093379,
+              "beats": false
+            },
+            {
+              "rmse": 0.19439836220914083,
+              "persistence_rmse": 0.19506491901827033,
+              "beats": true
+            },
+            {
+              "rmse": 0.06173391937874681,
+              "persistence_rmse": 0.03943890426004491,
+              "beats": false
+            },
+            {
+              "rmse": 0.09811834652801601,
+              "persistence_rmse": 0.0975139550951108,
+              "beats": false
+            },
+            {
+              "rmse": 0.1610279169557641,
+              "persistence_rmse": 0.1551562408411855,
+              "beats": false
+            },
+            {
+              "rmse": 0.09219138807523479,
+              "persistence_rmse": 0.06657967367572509,
+              "beats": false
+            },
+            {
+              "rmse": 0.06710275169355928,
+              "persistence_rmse": 0.08867000816288588,
+              "beats": true
+            },
+            {
+              "rmse": 0.06552726514041579,
+              "persistence_rmse": 0.0747027497519351,
+              "beats": true
+            },
+            {
+              "rmse": 0.10136883893206951,
+              "persistence_rmse": 0.08028785337753541,
+              "beats": false
+            },
+            {
+              "rmse": 0.07637775017737475,
+              "persistence_rmse": 0.05834171967124004,
+              "beats": false
+            },
+            {
+              "rmse": 0.19430331577635065,
+              "persistence_rmse": 0.142272605164096,
+              "beats": false
+            },
+            {
+              "rmse": 0.06560814225677332,
+              "persistence_rmse": 0.04374461874546483,
+              "beats": false
+            },
+            {
+              "rmse": 0.08960488687494184,
+              "persistence_rmse": 0.07038644126894866,
+              "beats": false
+            },
+            {
+              "rmse": 0.04862007960226923,
+              "persistence_rmse": 0.04123500264372247,
+              "beats": false
+            },
+            {
+              "rmse": 0.1615574152293608,
+              "persistence_rmse": 0.09388105127024547,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 156,
+            "learning_rate": 0.028817291174161472,
+            "num_leaves": 44,
+            "max_depth": 2,
+            "min_child_samples": 59,
+            "subsample": 0.5693709953127646,
+            "colsample_bytree": 0.9371171975084626,
+            "reg_lambda": 2.782798249640322,
+            "reg_alpha": 0.0063655194949024125,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": 0.0010020992394030592,
+          "persistence_rmse": 0.09234809931606343,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.031130793975425845
+        },
+        "n_features_selected": 45,
+        "n_train": 985,
+        "n_test": 247
+      },
+      "30": {
+        "horizon": 30,
+        "symbol": "ETH",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 30,
+            "returns": {
+              "r2": -6.040636429448636,
+              "rmse": 0.42797630537518644,
+              "mae": 0.36073046051728125
+            },
+            "price": {
+              "r2": -3.3263431413692874,
+              "rmse": 1044.4051756666065,
+              "mae": 857.5678713150764
+            },
+            "directional_accuracy": 0.5303643724696356,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 30,
+            "returns": {
+              "r2": -5.108563729266885,
+              "rmse": 0.39864224560582373,
+              "mae": 0.33666440816517434
+            },
+            "price": {
+              "r2": -2.7481748519373363,
+              "rmse": 972.1168152913282,
+              "mae": 804.0463753184099
+            },
+            "directional_accuracy": 0.5263157894736842,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 30,
+            "returns": {
+              "r2": -5.768179189280986,
+              "rmse": 0.4196137300454457,
+              "mae": 0.35430482803245833
+            },
+            "price": {
+              "r2": -3.162614582463978,
+              "rmse": 1024.4520477075496,
+              "mae": 844.210310985644
+            },
+            "directional_accuracy": 0.5344129554655871,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 30,
+            "returns": {
+              "r2": -4.012074135079081,
+              "rmse": 0.3610958599097304,
+              "mae": 0.2973845922005213
+            },
+            "price": {
+              "r2": -1.7235720441987632,
+              "rmse": 828.6630384794048,
+              "mae": 702.4716955100187
+            },
+            "directional_accuracy": 0.611336032388664,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -3.8912604268264506,
+              "rmse": 0.3567172895073888,
+              "mae": 0.28998630548956206
+            },
+            "price": {
+              "r2": -1.6191203926546307,
+              "rmse": 812.6176767248147,
+              "mae": 682.202054132825
+            },
+            "directional_accuracy": 0.611336032388664,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 30,
+            "returns": {
+              "r2": -3.3529279783089665,
+              "rmse": 0.33651506149191734,
+              "mae": 0.27702239328110745
+            },
+            "price": {
+              "r2": -1.42602165543732,
+              "rmse": 782.0884474794425,
+              "mae": 660.353056881618
+            },
+            "directional_accuracy": 0.6072874493927125,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 30,
+            "returns": {
+              "r2": -3.728674388826982,
+              "rmse": 0.3507385248325793,
+              "mae": 0.28797177291658743
+            },
+            "price": {
+              "r2": -1.5771938965008943,
+              "rmse": 806.0873045251454,
+              "mae": 681.3710345616737
+            },
+            "directional_accuracy": 0.611336032388664,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -3.169623534708288,
+              "rmse": 0.3293534284976458,
+              "mae": 0.26694843024542675
+            },
+            "price": {
+              "r2": -1.3189316590726792,
+              "rmse": 764.6320699553528,
+              "mae": 633.4329460665168
+            },
+            "directional_accuracy": 0.6032388663967612,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 30,
+            "returns": {
+              "r2": -0.42991755187175373,
+              "rmse": 0.19287203580094223,
+              "mae": 0.14235725187123402
+            },
+            "price": {
+              "r2": -0.04524503006266434,
+              "rmse": 513.3547558961162,
+              "mae": 363.821285559469
+            },
+            "directional_accuracy": 0.5748987854251012,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -1.8749851174016552,
+              "rmse": 0.27348377530085627,
+              "mae": 0.22486491165349412
+            },
+            "price": {
+              "r2": -0.5796756298330028,
+              "rmse": 631.09173612023,
+              "mae": 529.3762977537446
+            },
+            "directional_accuracy": 0.6720647773279352,
+            "beats_persistence_rmse": false
+          }
+        ],
+        "best_model": "StackedTuned",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.11654154291908925,
+            "rmse": 0.1704320270091275,
+            "mae": 0.13365243376423455
+          },
+          "price": {
+            "r2": 0.09120815610671207,
+            "rmse": 478.6749984789532,
+            "mae": 345.1061943319838
+          },
+          "up_day_share": 0.43724696356275305
+        },
+        "direction": {
+          "accuracy": 0.5141700404858299,
+          "base_rate_up": 0.4954314720812183,
+          "high_confidence_accuracy": 0.5113122171945701,
+          "high_confidence_frac": 0.8947368421052632,
+          "mean_prob_up": 0.6688450202460906
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.32709664556174883
+        },
+        "paper": {
+          "best": {
+            "mode": "long_short",
+            "net_sharpe": -3.8317904646438987,
+            "gross_sharpe": -3.7901670201888527,
+            "max_drawdown": -0.9053220632657903,
+            "n_trades": 127,
+            "hit_rate": 0.5772357723577236,
+            "mean_net_return": -0.004925074564262255,
+            "final_equity": 27340.712973246817,
+            "cost_drag": 5.271798274492347e-05
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": -4.187192510265127,
+              "gross_sharpe": -4.171307938375196,
+              "max_drawdown": -0.9053220632657902,
+              "n_trades": 113,
+              "hit_rate": 0.5398230088495575,
+              "mean_net_return": -0.0053298138091598,
+              "final_equity": 24762.05397867652,
+              "cost_drag": 2.236312271126958e-05
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": -3.8317904646438987,
+              "gross_sharpe": -3.7901670201888527,
+              "max_drawdown": -0.9053220632657903,
+              "n_trades": 127,
+              "hit_rate": 0.5772357723577236,
+              "mean_net_return": -0.004925074564262255,
+              "final_equity": 27340.712973246817,
+              "cost_drag": 5.271798274492347e-05
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 33,
+          "pass_frac": 0.36363636363636365,
+          "fold_rmse": [
+            {
+              "rmse": 0.10292855702490224,
+              "persistence_rmse": 0.1859623903688348,
+              "beats": true
+            },
+            {
+              "rmse": 0.17281226533228503,
+              "persistence_rmse": 0.17528193567162864,
+              "beats": true
+            },
+            {
+              "rmse": 0.17134843993372917,
+              "persistence_rmse": 0.10811885196315049,
+              "beats": false
+            },
+            {
+              "rmse": 0.13213329427216736,
+              "persistence_rmse": 0.0675732259901711,
+              "beats": false
+            },
+            {
+              "rmse": 0.4649820146654229,
+              "persistence_rmse": 0.45007256470475177,
+              "beats": false
+            },
+            {
+              "rmse": 0.16854646269309956,
+              "persistence_rmse": 0.14870191049614226,
+              "beats": false
+            },
+            {
+              "rmse": 0.6634576765897053,
+              "persistence_rmse": 0.11388653699825789,
+              "beats": false
+            },
+            {
+              "rmse": 0.1948419319562919,
+              "persistence_rmse": 0.19981314338064135,
+              "beats": true
+            },
+            {
+              "rmse": 0.1379711934771832,
+              "persistence_rmse": 0.13623409733483094,
+              "beats": false
+            },
+            {
+              "rmse": 0.25001087692488927,
+              "persistence_rmse": 0.09844572078913685,
+              "beats": false
+            },
+            {
+              "rmse": 0.23972143319887707,
+              "persistence_rmse": 0.18966760750699813,
+              "beats": false
+            },
+            {
+              "rmse": 0.2838257854347124,
+              "persistence_rmse": 0.06511036353197752,
+              "beats": false
+            },
+            {
+              "rmse": 0.14302584580241545,
+              "persistence_rmse": 0.11734223473373193,
+              "beats": false
+            },
+            {
+              "rmse": 0.3228991201947635,
+              "persistence_rmse": 0.35296910847566526,
+              "beats": true
+            },
+            {
+              "rmse": 0.11761370277027357,
+              "persistence_rmse": 0.13623620899149136,
+              "beats": true
+            },
+            {
+              "rmse": 0.11322162583223566,
+              "persistence_rmse": 0.13602135175737448,
+              "beats": true
+            },
+            {
+              "rmse": 0.3077606439768922,
+              "persistence_rmse": 0.21941189409505404,
+              "beats": false
+            },
+            {
+              "rmse": 0.4506914086693894,
+              "persistence_rmse": 0.24311552509163004,
+              "beats": false
+            },
+            {
+              "rmse": 0.34550064024876886,
+              "persistence_rmse": 0.1772435400749613,
+              "beats": false
+            },
+            {
+              "rmse": 0.29432811447970186,
+              "persistence_rmse": 0.49398843914780255,
+              "beats": true
+            },
+            {
+              "rmse": 0.11977769202104546,
+              "persistence_rmse": 0.05932256283127841,
+              "beats": false
+            },
+            {
+              "rmse": 0.2167447481781501,
+              "persistence_rmse": 0.43813760611568847,
+              "beats": true
+            },
+            {
+              "rmse": 0.2822563401554274,
+              "persistence_rmse": 0.3004465677127455,
+              "beats": true
+            },
+            {
+              "rmse": 0.13873250519829333,
+              "persistence_rmse": 0.06940169696451225,
+              "beats": false
+            },
+            {
+              "rmse": 0.09177118578006516,
+              "persistence_rmse": 0.12507829493803949,
+              "beats": true
+            },
+            {
+              "rmse": 0.20475388755955448,
+              "persistence_rmse": 0.22090055865609973,
+              "beats": true
+            },
+            {
+              "rmse": 0.07249178988213276,
+              "persistence_rmse": 0.05702309007511123,
+              "beats": false
+            },
+            {
+              "rmse": 0.20292187280648682,
+              "persistence_rmse": 0.11571368146647197,
+              "beats": false
+            },
+            {
+              "rmse": 0.3392811477485735,
+              "persistence_rmse": 0.33447445878028176,
+              "beats": false
+            },
+            {
+              "rmse": 0.07123499438017027,
+              "persistence_rmse": 0.08012222467007375,
+              "beats": true
+            },
+            {
+              "rmse": 0.2437769869050961,
+              "persistence_rmse": 0.10684778285001129,
+              "beats": false
+            },
+            {
+              "rmse": 0.39700794160772446,
+              "persistence_rmse": 0.104987833123854,
+              "beats": false
+            },
+            {
+              "rmse": 0.6521699375137048,
+              "persistence_rmse": 0.22809723502924578,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 178,
+            "learning_rate": 0.03489325666144911,
+            "num_leaves": 28,
+            "max_depth": 7,
+            "min_child_samples": 79,
+            "subsample": 0.7870044731464997,
+            "colsample_bytree": 0.9988508540228875,
+            "reg_lambda": 0.8906862770049915,
+            "reg_alpha": 0.005487114054103918,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": 0.04097122741107072,
+          "persistence_rmse": 0.1506680162336609,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.031130793975425845
+        },
+        "n_features_selected": 45,
+        "n_train": 985,
+        "n_test": 247
+      }
+    },
+    "summary": [
+      {
+        "horizon": 1,
+        "label": "next_day",
+        "best_model": "StackedTuned",
+        "ret_rmse": 0.03409943452503871,
+        "persistence_rmse": 0.03395667715085514,
+        "beats_persistence": false,
+        "directional_accuracy": 0.4715447154471545,
+        "direction_classifier_acc": 0.4817813765182186,
+        "direction_high_conf_acc": 0.5206611570247934,
+        "paper_best_mode": "long_flat",
+        "paper_net_sharpe": 0.0,
+        "wf_pass_frac": 0.09090909090909091,
+        "trustworthy": false
+      },
+      {
+        "horizon": 7,
+        "label": "next_week",
+        "best_model": "StackedTuned",
+        "ret_rmse": 0.08678919432764355,
+        "persistence_rmse": 0.08306893712362907,
+        "beats_persistence": false,
+        "directional_accuracy": 0.4493927125506073,
+        "direction_classifier_acc": 0.5222672064777328,
+        "direction_high_conf_acc": 0.5032258064516129,
+        "paper_best_mode": "long_flat",
+        "paper_net_sharpe": -3.607557828933514,
+        "wf_pass_frac": 0.2727272727272727,
+        "trustworthy": false
+      },
+      {
+        "horizon": 30,
+        "label": "next_month",
+        "best_model": "StackedTuned",
+        "ret_rmse": 0.19287203580094223,
+        "persistence_rmse": 0.1704320270091275,
+        "beats_persistence": false,
+        "directional_accuracy": 0.5748987854251012,
+        "direction_classifier_acc": 0.5141700404858299,
+        "direction_high_conf_acc": 0.5113122171945701,
+        "paper_best_mode": "long_short",
+        "paper_net_sharpe": -3.8317904646438987,
+        "wf_pass_frac": 0.36363636363636365,
+        "trustworthy": false
+      }
+    ],
+    "live_forecasts": [
+      {
+        "horizon_days": 1,
+        "horizon_label": "1D",
+        "as_of": "2026-07-30",
+        "current_price": 1925.36,
+        "predicted_price": 1918.9620316800415,
+        "predicted_price_p10": 1906.783552574034,
+        "predicted_price_p90": 1931.140510786049,
+        "predicted_return_pct": -0.33229984626035636,
+        "predicted_return_p10_pct": -0.9648298201876987,
+        "predicted_return_p90_pct": 0.300230127666986,
+        "direction_prob_up": 0.36290264227875113,
+        "confidence": 0.27419471544249774,
+        "model": "Ensemble",
+        "holdout_beats_persistence": false,
+        "holdout_directional_accuracy": 0.4715447154471545,
+        "holdout_ret_rmse": 0.03409943452503871,
+        "persistence_ret_rmse": 0.03395667715085514,
+        "wf_pass_frac": 0.09090909090909091,
+        "trustworthy": false
+      },
+      {
+        "horizon_days": 7,
+        "horizon_label": "1W",
+        "as_of": "2026-07-30",
+        "current_price": 1925.36,
+        "predicted_price": 1793.4514469727394,
+        "predicted_price_p10": 1777.311607165067,
+        "predicted_price_p90": 1809.591286780412,
+        "predicted_return_pct": -6.851111118297899,
+        "predicted_return_p10_pct": -7.689387586473852,
+        "predicted_return_p90_pct": -6.012834650121946,
+        "direction_prob_up": 0.2890972447818701,
+        "confidence": 0.4218055104362598,
+        "model": "Ensemble",
+        "holdout_beats_persistence": false,
+        "holdout_directional_accuracy": 0.4493927125506073,
+        "holdout_ret_rmse": 0.08678919432764355,
+        "persistence_ret_rmse": 0.08306893712362907,
+        "wf_pass_frac": 0.2727272727272727,
+        "trustworthy": false
+      },
+      {
+        "horizon_days": 30,
+        "horizon_label": "1M",
+        "as_of": "2026-07-30",
+        "current_price": 1925.36,
+        "predicted_price": 1848.855399151482,
+        "predicted_price_p10": 1835.0472656297352,
+        "predicted_price_p90": 1862.6635326732287,
+        "predicted_return_pct": -3.973521878948244,
+        "predicted_return_p10_pct": -4.690693396053965,
+        "predicted_return_p90_pct": -3.256350361842523,
+        "direction_prob_up": 0.11349182593420269,
+        "confidence": 0.7730163481315946,
+        "model": "Ensemble",
+        "holdout_beats_persistence": false,
+        "holdout_directional_accuracy": 0.5748987854251012,
+        "holdout_ret_rmse": 0.19287203580094223,
+        "persistence_ret_rmse": 0.1704320270091275,
+        "wf_pass_frac": 0.36363636363636365,
+        "trustworthy": false
+      }
+    ]
+  },
+  "DOGE": {
+    "by_horizon": {
+      "1": {
+        "horizon": 1,
+        "symbol": "DOGE",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.3512657211696433,
+              "rmse": 0.04153477695245013,
+              "mae": 0.031328891610112965
+            },
+            "price": {
+              "r2": 0.9624094793315846,
+              "rmse": 0.004818558148912583,
+              "mae": 0.003545841762896682
+            },
+            "directional_accuracy": 0.4788135593220339,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.2659808641875381,
+              "rmse": 0.04020268631549986,
+              "mae": 0.03056865785737999
+            },
+            "price": {
+              "r2": 0.9652018974167933,
+              "rmse": 0.004636131178178258,
+              "mae": 0.0034585587509789965
+            },
+            "directional_accuracy": 0.4703389830508475,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.30604425914771194,
+              "rmse": 0.0408338613653157,
+              "mae": 0.03106306960179263
+            },
+            "price": {
+              "r2": 0.9640216705927594,
+              "rmse": 0.004714096088096322,
+              "mae": 0.0035132688464624556
+            },
+            "directional_accuracy": 0.4745762711864407,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.6346325375835449,
+              "rmse": 0.04568267981880581,
+              "mae": 0.03585316017098353
+            },
+            "price": {
+              "r2": 0.9555630964601279,
+              "rmse": 0.005239017245784867,
+              "mae": 0.004037615438040104
+            },
+            "directional_accuracy": 0.4194915254237288,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.49389744368951605,
+              "rmse": 0.04367188068454772,
+              "mae": 0.03401181300694977
+            },
+            "price": {
+              "r2": 0.9586024527505242,
+              "rmse": 0.0050566772956519455,
+              "mae": 0.0038473352608505667
+            },
+            "directional_accuracy": 0.4279661016949153,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.5150121066615563,
+              "rmse": 0.04397942575165388,
+              "mae": 0.033985267328184667
+            },
+            "price": {
+              "r2": 0.9584237024983491,
+              "rmse": 0.0050675826364922376,
+              "mae": 0.0038436355757671516
+            },
+            "directional_accuracy": 0.4194915254237288,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.5207483721430679,
+              "rmse": 0.0440626063787418,
+              "mae": 0.034397541864364986
+            },
+            "price": {
+              "r2": 0.9582060444393494,
+              "rmse": 0.005080830092865428,
+              "mae": 0.0038859140537232818
+            },
+            "directional_accuracy": 0.3983050847457627,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.14013066268095575,
+              "rmse": 0.03815213231371972,
+              "mae": 0.028759564451338475
+            },
+            "price": {
+              "r2": 0.967671409393271,
+              "rmse": 0.004468598336159336,
+              "mae": 0.0033001836285009964
+            },
+            "directional_accuracy": 0.4067796610169492,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.015076726667852647,
+              "rmse": 0.03599904153779296,
+              "mae": 0.025851911649412907
+            },
+            "price": {
+              "r2": 0.971004150601413,
+              "rmse": 0.004232001874521897,
+              "mae": 0.0029850630043910275
+            },
+            "directional_accuracy": 0.4152542372881356,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 1,
+            "returns": {
+              "r2": -0.13174147878873232,
+              "rmse": 0.03801150974838724,
+              "mae": 0.02804594258800832
+            },
+            "price": {
+              "r2": 0.9664877234449457,
+              "rmse": 0.0045496700221667,
+              "mae": 0.0032597397341985004
+            },
+            "directional_accuracy": 0.4449152542372881,
+            "beats_persistence_rmse": false
+          }
+        ],
+        "best_model": "StackedTuned",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.0065539454423202415,
+            "rmse": 0.03584759550501442,
+            "mae": 0.025546848497666922
+          },
+          "price": {
+            "r2": 0.9713215752532933,
+            "rmse": 0.004208773749037627,
+            "mae": 0.002946470588235294
+          },
+          "up_day_share": 0.4117647058823529
+        },
+        "direction": {
+          "accuracy": 0.4369747899159664,
+          "base_rate_up": 0.4978947368421053,
+          "high_confidence_accuracy": 0.41040462427745666,
+          "high_confidence_frac": 0.726890756302521,
+          "mean_prob_up": 0.7230711084163266
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.12185357113862706
+        },
+        "paper": {
+          "best": {
+            "mode": "long_flat",
+            "net_sharpe": 0.0,
+            "gross_sharpe": 0.0,
+            "max_drawdown": 0.0,
+            "n_trades": 0,
+            "hit_rate": 0.5,
+            "mean_net_return": 0.0,
+            "final_equity": 100000.0,
+            "cost_drag": 0.0
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": 0.0,
+              "gross_sharpe": 0.0,
+              "max_drawdown": 0.0,
+              "n_trades": 0,
+              "hit_rate": 0.5,
+              "mean_net_return": 0.0,
+              "final_equity": 100000.0,
+              "cost_drag": 0.0
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": 0.0,
+              "gross_sharpe": 0.0,
+              "max_drawdown": 0.0,
+              "n_trades": 0,
+              "hit_rate": 0.5,
+              "mean_net_return": 0.0,
+              "final_equity": 100000.0,
+              "cost_drag": 0.0
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 32,
+          "pass_frac": 0.125,
+          "fold_rmse": [
+            {
+              "rmse": 0.040411236842551886,
+              "persistence_rmse": 0.03922521525960679,
+              "beats": false
+            },
+            {
+              "rmse": 0.03905642329013415,
+              "persistence_rmse": 0.03278002182298796,
+              "beats": false
+            },
+            {
+              "rmse": 0.04392358777015253,
+              "persistence_rmse": 0.04449176526084507,
+              "beats": true
+            },
+            {
+              "rmse": 0.04604371506881238,
+              "persistence_rmse": 0.04343088429578855,
+              "beats": false
+            },
+            {
+              "rmse": 0.0997493764393436,
+              "persistence_rmse": 0.09154608987187472,
+              "beats": false
+            },
+            {
+              "rmse": 0.061824378785707075,
+              "persistence_rmse": 0.05422098500258828,
+              "beats": false
+            },
+            {
+              "rmse": 0.048497560351040754,
+              "persistence_rmse": 0.04919586243800069,
+              "beats": true
+            },
+            {
+              "rmse": 0.03547360092494198,
+              "persistence_rmse": 0.03211746625484362,
+              "beats": false
+            },
+            {
+              "rmse": 0.04398235088806415,
+              "persistence_rmse": 0.04459543626970592,
+              "beats": true
+            },
+            {
+              "rmse": 0.04770858075975962,
+              "persistence_rmse": 0.0437731759696269,
+              "beats": false
+            },
+            {
+              "rmse": 0.035734905450545904,
+              "persistence_rmse": 0.03365045384762831,
+              "beats": false
+            },
+            {
+              "rmse": 0.03943170543533688,
+              "persistence_rmse": 0.03822861301021181,
+              "beats": false
+            },
+            {
+              "rmse": 0.09234680023104481,
+              "persistence_rmse": 0.0925639753210374,
+              "beats": true
+            },
+            {
+              "rmse": 0.05781926750379975,
+              "persistence_rmse": 0.04665523846276245,
+              "beats": false
+            },
+            {
+              "rmse": 0.06406326789750637,
+              "persistence_rmse": 0.05186898481308518,
+              "beats": false
+            },
+            {
+              "rmse": 0.04860205122969164,
+              "persistence_rmse": 0.040792524092259586,
+              "beats": false
+            },
+            {
+              "rmse": 0.06592967962970168,
+              "persistence_rmse": 0.06504037838798565,
+              "beats": false
+            },
+            {
+              "rmse": 0.05062033849457719,
+              "persistence_rmse": 0.04949778944079082,
+              "beats": false
+            },
+            {
+              "rmse": 0.06270816932270441,
+              "persistence_rmse": 0.060748322086652075,
+              "beats": false
+            },
+            {
+              "rmse": 0.04060068259887275,
+              "persistence_rmse": 0.03872616747088878,
+              "beats": false
+            },
+            {
+              "rmse": 0.05104928339614952,
+              "persistence_rmse": 0.0482663435978477,
+              "beats": false
+            },
+            {
+              "rmse": 0.05505125756196948,
+              "persistence_rmse": 0.04919637412354892,
+              "beats": false
+            },
+            {
+              "rmse": 0.04194354385471202,
+              "persistence_rmse": 0.03808640076226283,
+              "beats": false
+            },
+            {
+              "rmse": 0.061258527726904495,
+              "persistence_rmse": 0.05883639250605982,
+              "beats": false
+            },
+            {
+              "rmse": 0.04159892347983813,
+              "persistence_rmse": 0.04117756487082232,
+              "beats": false
+            },
+            {
+              "rmse": 0.03747980233645902,
+              "persistence_rmse": 0.03692260836621205,
+              "beats": false
+            },
+            {
+              "rmse": 0.037898541175184,
+              "persistence_rmse": 0.03780449413399424,
+              "beats": false
+            },
+            {
+              "rmse": 0.06441591380659405,
+              "persistence_rmse": 0.05456377765449279,
+              "beats": false
+            },
+            {
+              "rmse": 0.03973911385332654,
+              "persistence_rmse": 0.03785801005339527,
+              "beats": false
+            },
+            {
+              "rmse": 0.030070955317650756,
+              "persistence_rmse": 0.023937221411016965,
+              "beats": false
+            },
+            {
+              "rmse": 0.026143023021533464,
+              "persistence_rmse": 0.02225529964153656,
+              "beats": false
+            },
+            {
+              "rmse": 0.03629764542296576,
+              "persistence_rmse": 0.027635536347596273,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 188,
+            "learning_rate": 0.015858809062090664,
+            "num_leaves": 50,
+            "max_depth": 2,
+            "min_child_samples": 43,
+            "subsample": 0.721745946576042,
+            "colsample_bytree": 0.6888568415788954,
+            "reg_lambda": 0.6630599890152515,
+            "reg_alpha": 0.008438622166661405,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": 0.00041445926954830625,
+          "persistence_rmse": 0.04864511659419225,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.04300207619375096
+        },
+        "n_features_selected": 45,
+        "n_train": 950,
+        "n_test": 238
+      },
+      "7": {
+        "horizon": 7,
+        "symbol": "DOGE",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 7,
+            "returns": {
+              "r2": -19.99080390726851,
+              "rmse": 0.35111820506185853,
+              "mae": 0.30915429773566705
+            },
+            "price": {
+              "r2": -1.4018596058274277,
+              "rmse": 0.03608433066852271,
+              "mae": 0.03260487812247779
+            },
+            "directional_accuracy": 0.3865546218487395,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 7,
+            "returns": {
+              "r2": -18.979917128099867,
+              "rmse": 0.3425592137935493,
+              "mae": 0.30258333784450875
+            },
+            "price": {
+              "r2": -1.289816584967106,
+              "rmse": 0.035232640550106546,
+              "mae": 0.031919066710515226
+            },
+            "directional_accuracy": 0.3865546218487395,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 7,
+            "returns": {
+              "r2": -20.157537500254087,
+              "rmse": 0.3525099431985052,
+              "mae": 0.31089915222526726
+            },
+            "price": {
+              "r2": -1.41613304336189,
+              "rmse": 0.03619139032256101,
+              "mae": 0.03276119098528878
+            },
+            "directional_accuracy": 0.3865546218487395,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 7,
+            "returns": {
+              "r2": -3.318730970214582,
+              "rmse": 0.15926373171045563,
+              "mae": 0.13796755739909097
+            },
+            "price": {
+              "r2": 0.39211576612667487,
+              "rmse": 0.018153287450974567,
+              "mae": 0.01547777564035009
+            },
+            "directional_accuracy": 0.4117647058823529,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -3.7959411833752394,
+              "rmse": 0.1678323733673251,
+              "mae": 0.14560907351319557
+            },
+            "price": {
+              "r2": 0.3831000371079698,
+              "rmse": 0.018287410633935085,
+              "mae": 0.015897094567156586
+            },
+            "directional_accuracy": 0.42436974789915966,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 7,
+            "returns": {
+              "r2": -3.581989881191724,
+              "rmse": 0.16404608670431786,
+              "mae": 0.1441424737698936
+            },
+            "price": {
+              "r2": 0.3721204289410335,
+              "rmse": 0.018449432896513053,
+              "mae": 0.016040959748667524
+            },
+            "directional_accuracy": 0.40336134453781514,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 7,
+            "returns": {
+              "r2": -3.454180032635702,
+              "rmse": 0.1617419576439057,
+              "mae": 0.142145654833052
+            },
+            "price": {
+              "r2": 0.3954987350072293,
+              "rmse": 0.0181027040639709,
+              "mae": 0.015760637367358218
+            },
+            "directional_accuracy": 0.41596638655462187,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -2.0015474551020613,
+              "rmse": 0.13277350466025178,
+              "mae": 0.11651078352197966
+            },
+            "price": {
+              "r2": 0.5797110995262649,
+              "rmse": 0.015094502551799782,
+              "mae": 0.013045107536544188
+            },
+            "directional_accuracy": 0.40756302521008403,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 7,
+            "returns": {
+              "r2": -0.15439462745542087,
+              "rmse": 0.08234096650591251,
+              "mae": 0.06528961202048564
+            },
+            "price": {
+              "r2": 0.8139273398413096,
+              "rmse": 0.010043524146646247,
+              "mae": 0.0075858852829768205
+            },
+            "directional_accuracy": 0.3319327731092437,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 7,
+            "returns": {
+              "r2": -2.3300372608389575,
+              "rmse": 0.1398502858607483,
+              "mae": 0.11688959258586873
+            },
+            "price": {
+              "r2": 0.4683875653100329,
+              "rmse": 0.016976275327771746,
+              "mae": 0.013667663506121593
+            },
+            "directional_accuracy": 0.453781512605042,
+            "beats_persistence_rmse": false
+          }
+        ],
+        "best_model": "StackedTuned",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.07636343205982477,
+            "rmse": 0.07950936396418219,
+            "mae": 0.06230467696862962
+          },
+          "price": {
+            "r2": 0.8306153436744987,
+            "rmse": 0.00958256730832022,
+            "mae": 0.007191470588235294
+          },
+          "up_day_share": 0.38235294117647056
+        },
+        "direction": {
+          "accuracy": 0.42857142857142855,
+          "base_rate_up": 0.47157894736842104,
+          "high_confidence_accuracy": 0.4129353233830846,
+          "high_confidence_frac": 0.8445378151260504,
+          "mean_prob_up": 0.7814349854130951
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.3067304013583851
+        },
+        "paper": {
+          "best": {
+            "mode": "long_flat",
+            "net_sharpe": -1.7875930182698965,
+            "gross_sharpe": -1.6862133171458313,
+            "max_drawdown": -0.03314750927307774,
+            "n_trades": 4,
+            "hit_rate": 0.0,
+            "mean_net_return": -0.00014048491197905937,
+            "final_equity": 96685.24907269223,
+            "cost_drag": 1.5594278596525678e-05
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": -1.7875930182698965,
+              "gross_sharpe": -1.6862133171458313,
+              "max_drawdown": -0.03314750927307774,
+              "n_trades": 4,
+              "hit_rate": 0.0,
+              "mean_net_return": -0.00014048491197905937,
+              "final_equity": 96685.24907269223,
+              "cost_drag": 1.5594278596525678e-05
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": -1.7875930182698965,
+              "gross_sharpe": -1.6862133171458313,
+              "max_drawdown": -0.03314750927307774,
+              "n_trades": 4,
+              "hit_rate": 0.0,
+              "mean_net_return": -0.00014048491197905937,
+              "final_equity": 96685.24907269223,
+              "cost_drag": 1.5594278596525678e-05
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 32,
+          "pass_frac": 0.1875,
+          "fold_rmse": [
+            {
+              "rmse": 0.11764013041787567,
+              "persistence_rmse": 0.09334981743968139,
+              "beats": false
+            },
+            {
+              "rmse": 0.10548516281712918,
+              "persistence_rmse": 0.07613677088835052,
+              "beats": false
+            },
+            {
+              "rmse": 0.060951367701329445,
+              "persistence_rmse": 0.05830382669466179,
+              "beats": false
+            },
+            {
+              "rmse": 0.3495340307720614,
+              "persistence_rmse": 0.33429903648467557,
+              "beats": false
+            },
+            {
+              "rmse": 0.24406998127019644,
+              "persistence_rmse": 0.20856708130924645,
+              "beats": false
+            },
+            {
+              "rmse": 0.20459633413882763,
+              "persistence_rmse": 0.11811049906115602,
+              "beats": false
+            },
+            {
+              "rmse": 0.20266026980346669,
+              "persistence_rmse": 0.08409936775561713,
+              "beats": false
+            },
+            {
+              "rmse": 0.18947196566652158,
+              "persistence_rmse": 0.08561471423911775,
+              "beats": false
+            },
+            {
+              "rmse": 0.10150760634375897,
+              "persistence_rmse": 0.11554417351919428,
+              "beats": true
+            },
+            {
+              "rmse": 0.1315914700036398,
+              "persistence_rmse": 0.10969259230013034,
+              "beats": false
+            },
+            {
+              "rmse": 0.11467788552944076,
+              "persistence_rmse": 0.07976080249164465,
+              "beats": false
+            },
+            {
+              "rmse": 0.2023971836200483,
+              "persistence_rmse": 0.15012459050792612,
+              "beats": false
+            },
+            {
+              "rmse": 0.503237792380009,
+              "persistence_rmse": 0.4931754952401641,
+              "beats": false
+            },
+            {
+              "rmse": 0.6045070320794322,
+              "persistence_rmse": 0.10822073305088364,
+              "beats": false
+            },
+            {
+              "rmse": 0.256080530338658,
+              "persistence_rmse": 0.13108952593860407,
+              "beats": false
+            },
+            {
+              "rmse": 0.200630287007573,
+              "persistence_rmse": 0.13865681185943926,
+              "beats": false
+            },
+            {
+              "rmse": 0.17228053845374822,
+              "persistence_rmse": 0.1077282549997472,
+              "beats": false
+            },
+            {
+              "rmse": 0.08060689246240722,
+              "persistence_rmse": 0.10261044054278631,
+              "beats": true
+            },
+            {
+              "rmse": 0.2264966291452621,
+              "persistence_rmse": 0.16850770637280654,
+              "beats": false
+            },
+            {
+              "rmse": 0.10462466589599165,
+              "persistence_rmse": 0.09762631040063538,
+              "beats": false
+            },
+            {
+              "rmse": 0.141230733700036,
+              "persistence_rmse": 0.16845561995850025,
+              "beats": true
+            },
+            {
+              "rmse": 0.17271317695951605,
+              "persistence_rmse": 0.10906064161006278,
+              "beats": false
+            },
+            {
+              "rmse": 0.15269616755034143,
+              "persistence_rmse": 0.13509198718364704,
+              "beats": false
+            },
+            {
+              "rmse": 0.11313631767348165,
+              "persistence_rmse": 0.12292551475110344,
+              "beats": true
+            },
+            {
+              "rmse": 0.11174988203499035,
+              "persistence_rmse": 0.09004259914814856,
+              "beats": false
+            },
+            {
+              "rmse": 0.10872022342614278,
+              "persistence_rmse": 0.06003154913978836,
+              "beats": false
+            },
+            {
+              "rmse": 0.11503042142563245,
+              "persistence_rmse": 0.11639479240677161,
+              "beats": true
+            },
+            {
+              "rmse": 0.20557260629394825,
+              "persistence_rmse": 0.10547873080345317,
+              "beats": false
+            },
+            {
+              "rmse": 0.10655370293143311,
+              "persistence_rmse": 0.051529603990311285,
+              "beats": false
+            },
+            {
+              "rmse": 0.11345298545871275,
+              "persistence_rmse": 0.028587891478738043,
+              "beats": false
+            },
+            {
+              "rmse": 0.06666823487350605,
+              "persistence_rmse": 0.07009711967745451,
+              "beats": true
+            },
+            {
+              "rmse": 0.08429226275078382,
+              "persistence_rmse": 0.08289615208779216,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 535,
+            "learning_rate": 0.010322546492375234,
+            "num_leaves": 58,
+            "max_depth": 7,
+            "min_child_samples": 10,
+            "subsample": 0.7733545539906865,
+            "colsample_bytree": 0.4018306608742394,
+            "reg_lambda": 1.1436213760634086,
+            "reg_alpha": 0.002016597439639234,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": 0.0033600164930641524,
+          "persistence_rmse": 0.11336270005455,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.04300207619375096
+        },
+        "n_features_selected": 45,
+        "n_train": 950,
+        "n_test": 238
+      },
+      "30": {
+        "horizon": 30,
+        "symbol": "DOGE",
+        "models": [
+          {
+            "name": "Ridge",
+            "horizon": 30,
+            "returns": {
+              "r2": -92.61312757720619,
+              "rmse": 1.3295160430640074,
+              "mae": 1.1912593790192767
+            },
+            "price": {
+              "r2": -40.77629895210813,
+              "rmse": 0.13499568505236192,
+              "mae": 0.12419377813867293
+            },
+            "directional_accuracy": 0.28991596638655465,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Lasso",
+            "horizon": 30,
+            "returns": {
+              "r2": -93.5825337802548,
+              "rmse": 1.3363821828071918,
+              "mae": 1.1956569023104615
+            },
+            "price": {
+              "r2": -41.034231698057994,
+              "rmse": 0.13541178494979503,
+              "mae": 0.1244411600399146
+            },
+            "directional_accuracy": 0.28991596638655465,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "ElasticNet",
+            "horizon": 30,
+            "returns": {
+              "r2": -94.1332115791748,
+              "rmse": 1.3402668743840553,
+              "mae": 1.1970939321884915
+            },
+            "price": {
+              "r2": -41.30424681469121,
+              "rmse": 0.13584601078795155,
+              "mae": 0.12460087391229747
+            },
+            "directional_accuracy": 0.28991596638655465,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "HistGradientBoosting",
+            "horizon": 30,
+            "returns": {
+              "r2": -19.814876147904993,
+              "rmse": 0.6269199932857397,
+              "mae": 0.5562585014222672
+            },
+            "price": {
+              "r2": -9.695309213681986,
+              "rmse": 0.06830485574421219,
+              "mae": 0.06037599475294011
+            },
+            "directional_accuracy": 0.3235294117647059,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "LightGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -8.773085364461918,
+              "rmse": 0.42957702975455675,
+              "mae": 0.39288116669571727
+            },
+            "price": {
+              "r2": -4.2961394688668015,
+              "rmse": 0.048065627077120046,
+              "mae": 0.04319496877667849
+            },
+            "directional_accuracy": 0.3235294117647059,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "XGBoost",
+            "horizon": 30,
+            "returns": {
+              "r2": -18.976649760767856,
+              "rmse": 0.614167077663434,
+              "mae": 0.5517252442393062
+            },
+            "price": {
+              "r2": -9.505217238853186,
+              "rmse": 0.06769512971921197,
+              "mae": 0.060392420727299764
+            },
+            "directional_accuracy": 0.31932773109243695,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "Ensemble",
+            "horizon": 30,
+            "returns": {
+              "r2": -15.238375045479675,
+              "rmse": 0.5537280049032104,
+              "mae": 0.500288304119097
+            },
+            "price": {
+              "r2": -7.5378800222737254,
+              "rmse": 0.06102811132222034,
+              "mae": 0.05465446141897279
+            },
+            "directional_accuracy": 0.3235294117647059,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "TunedLightGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -22.715885661995095,
+              "rmse": 0.669182967783152,
+              "mae": 0.6146569037532947
+            },
+            "price": {
+              "r2": -10.32089905931315,
+              "rmse": 0.07027411176256144,
+              "mae": 0.06564169493593175
+            },
+            "directional_accuracy": 0.31092436974789917,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "StackedTuned",
+            "horizon": 30,
+            "returns": {
+              "r2": -4.017567327834838,
+              "rmse": 0.30780226342331374,
+              "mae": 0.2637888447180889
+            },
+            "price": {
+              "r2": -1.2407901119837028,
+              "rmse": 0.03126478853831331,
+              "mae": 0.02762649279247213
+            },
+            "directional_accuracy": 0.6764705882352942,
+            "beats_persistence_rmse": false
+          },
+          {
+            "name": "RegimeLGBM",
+            "horizon": 30,
+            "returns": {
+              "r2": -16.390357102379152,
+              "rmse": 0.573032764879662,
+              "mae": 0.49161651457214506
+            },
+            "price": {
+              "r2": -7.074868488335747,
+              "rmse": 0.05935026123824551,
+              "mae": 0.05165029169528689
+            },
+            "directional_accuracy": 0.3277310924369748,
+            "beats_persistence_rmse": false
+          }
+        ],
+        "best_model": "StackedTuned",
+        "baseline_persistence": {
+          "returns": {
+            "r2": -0.3515019844027194,
+            "rmse": 0.1597473080893166,
+            "mae": 0.13048062285058037
+          },
+          "price": {
+            "r2": 0.09175396489608112,
+            "rmse": 0.01990474697404718,
+            "mae": 0.01541378151260504
+          },
+          "up_day_share": 0.2857142857142857
+        },
+        "direction": {
+          "accuracy": 0.2857142857142857,
+          "base_rate_up": 0.45263157894736844,
+          "high_confidence_accuracy": 0.2869198312236287,
+          "high_confidence_frac": 0.9957983193277311,
+          "mean_prob_up": 0.9499807946960123
+        },
+        "conformal": {
+          "alpha": 0.2,
+          "coverage_target": 0.8,
+          "mean_width": 0.4980679071674989
+        },
+        "paper": {
+          "best": {
+            "mode": "long_short",
+            "net_sharpe": 8.256897764672566,
+            "gross_sharpe": 8.303111882054043,
+            "max_drawdown": -0.6093249218100616,
+            "n_trades": 236,
+            "hit_rate": 0.6723404255319149,
+            "mean_net_return": 0.011141749978933255,
+            "final_equity": 1293148.9345603408,
+            "cost_drag": 5.925621168216388e-05
+          },
+          "modes": {
+            "long_flat": {
+              "mode": "long_flat",
+              "net_sharpe": -3.729211415882309,
+              "gross_sharpe": -3.7000243210789634,
+              "max_drawdown": -0.15510738476906955,
+              "n_trades": 10,
+              "hit_rate": 0.0,
+              "mean_net_return": -0.0007682504925234627,
+              "final_equity": 83128.25351027807,
+              "cost_drag": 1.062403172012264e-05
+            },
+            "long_short": {
+              "mode": "long_short",
+              "net_sharpe": 8.256897764672566,
+              "gross_sharpe": 8.303111882054043,
+              "max_drawdown": -0.6093249218100616,
+              "n_trades": 236,
+              "hit_rate": 0.6723404255319149,
+              "mean_net_return": 0.011141749978933255,
+              "final_equity": 1293148.9345603408,
+              "cost_drag": 5.925621168216388e-05
+            }
+          }
+        },
+        "walk_forward": {
+          "n_folds": 32,
+          "pass_frac": 0.15625,
+          "fold_rmse": [
+            {
+              "rmse": 0.37122041496517166,
+              "persistence_rmse": 0.24289092119075817,
+              "beats": false
+            },
+            {
+              "rmse": 0.08842602367319036,
+              "persistence_rmse": 0.13885221001147874,
+              "beats": true
+            },
+            {
+              "rmse": 0.13866363716979802,
+              "persistence_rmse": 0.11083969166171045,
+              "beats": false
+            },
+            {
+              "rmse": 1.0686581673809215,
+              "persistence_rmse": 0.9740234828457577,
+              "beats": false
+            },
+            {
+              "rmse": 0.3164909096377224,
+              "persistence_rmse": 0.23247770506370138,
+              "beats": false
+            },
+            {
+              "rmse": 0.7328022143512997,
+              "persistence_rmse": 0.18188245176112755,
+              "beats": false
+            },
+            {
+              "rmse": 0.21822590062098524,
+              "persistence_rmse": 0.1706319526630968,
+              "beats": false
+            },
+            {
+              "rmse": 0.24240438577137627,
+              "persistence_rmse": 0.2006167722462517,
+              "beats": false
+            },
+            {
+              "rmse": 0.11091803110020318,
+              "persistence_rmse": 0.13589841335115607,
+              "beats": true
+            },
+            {
+              "rmse": 0.056403450338927325,
+              "persistence_rmse": 0.09512041982608542,
+              "beats": true
+            },
+            {
+              "rmse": 0.33117069956275696,
+              "persistence_rmse": 0.21057169725506358,
+              "beats": false
+            },
+            {
+              "rmse": 1.5798173918965732,
+              "persistence_rmse": 1.4486227941898013,
+              "beats": false
+            },
+            {
+              "rmse": 1.2204473920334826,
+              "persistence_rmse": 1.0873619333657183,
+              "beats": false
+            },
+            {
+              "rmse": 1.5313237004240796,
+              "persistence_rmse": 0.17743757924710826,
+              "beats": false
+            },
+            {
+              "rmse": 1.3081208744887316,
+              "persistence_rmse": 0.24576954980576687,
+              "beats": false
+            },
+            {
+              "rmse": 0.7729496876140667,
+              "persistence_rmse": 0.33066471038411266,
+              "beats": false
+            },
+            {
+              "rmse": 0.2563066760032069,
+              "persistence_rmse": 0.13887457998242997,
+              "beats": false
+            },
+            {
+              "rmse": 0.23990940484823295,
+              "persistence_rmse": 0.3201482808691622,
+              "beats": true
+            },
+            {
+              "rmse": 0.3252619440636634,
+              "persistence_rmse": 0.20671173751710278,
+              "beats": false
+            },
+            {
+              "rmse": 0.41034884748663364,
+              "persistence_rmse": 0.30249446179688955,
+              "beats": false
+            },
+            {
+              "rmse": 0.26167777249034824,
+              "persistence_rmse": 0.2753142439715812,
+              "beats": true
+            },
+            {
+              "rmse": 0.29445502476267293,
+              "persistence_rmse": 0.13574427343998025,
+              "beats": false
+            },
+            {
+              "rmse": 0.21076679980123758,
+              "persistence_rmse": 0.19431655659704594,
+              "beats": false
+            },
+            {
+              "rmse": 0.2521366625079959,
+              "persistence_rmse": 0.22707304444348717,
+              "beats": false
+            },
+            {
+              "rmse": 0.25325614841057603,
+              "persistence_rmse": 0.20517281815347582,
+              "beats": false
+            },
+            {
+              "rmse": 0.359257451013913,
+              "persistence_rmse": 0.11231684754568365,
+              "beats": false
+            },
+            {
+              "rmse": 0.49842871378008247,
+              "persistence_rmse": 0.23372338013295316,
+              "beats": false
+            },
+            {
+              "rmse": 0.3965466177184745,
+              "persistence_rmse": 0.15096614057021,
+              "beats": false
+            },
+            {
+              "rmse": 0.3223707739092611,
+              "persistence_rmse": 0.04601944331738559,
+              "beats": false
+            },
+            {
+              "rmse": 0.19768178672661493,
+              "persistence_rmse": 0.15444955166482824,
+              "beats": false
+            },
+            {
+              "rmse": 0.42583067941200237,
+              "persistence_rmse": 0.16598698695017058,
+              "beats": false
+            },
+            {
+              "rmse": 0.49721443515037544,
+              "persistence_rmse": 0.19612180278242639,
+              "beats": false
+            }
+          ]
+        },
+        "trustworthy": false,
+        "tune": {
+          "params": {
+            "n_estimators": 316,
+            "learning_rate": 0.022004527434741072,
+            "num_leaves": 42,
+            "max_depth": 2,
+            "min_child_samples": 30,
+            "subsample": 0.6831809216468459,
+            "colsample_bytree": 0.6736419905302216,
+            "reg_lambda": 2.2673986523780396,
+            "reg_alpha": 0.004561725458211575,
+            "random_state": 42,
+            "verbose": -1
+          },
+          "val_margin_vs_persistence": 0.026267755022859496,
+          "persistence_rmse": 0.20915037207613982,
+          "n_trials": 25,
+          "regime_vol_threshold": 0.04300207619375096
+        },
+        "n_features_selected": 45,
+        "n_train": 950,
+        "n_test": 238
+      }
+    },
+    "summary": [
+      {
+        "horizon": 1,
+        "label": "next_day",
+        "best_model": "StackedTuned",
+        "ret_rmse": 0.03599904153779296,
+        "persistence_rmse": 0.03584759550501442,
+        "beats_persistence": false,
+        "directional_accuracy": 0.4152542372881356,
+        "direction_classifier_acc": 0.4369747899159664,
+        "direction_high_conf_acc": 0.41040462427745666,
+        "paper_best_mode": "long_flat",
+        "paper_net_sharpe": 0.0,
+        "wf_pass_frac": 0.125,
+        "trustworthy": false
+      },
+      {
+        "horizon": 7,
+        "label": "next_week",
+        "best_model": "StackedTuned",
+        "ret_rmse": 0.08234096650591251,
+        "persistence_rmse": 0.07950936396418219,
+        "beats_persistence": false,
+        "directional_accuracy": 0.3319327731092437,
+        "direction_classifier_acc": 0.42857142857142855,
+        "direction_high_conf_acc": 0.4129353233830846,
+        "paper_best_mode": "long_flat",
+        "paper_net_sharpe": -1.7875930182698965,
+        "wf_pass_frac": 0.1875,
+        "trustworthy": false
+      },
+      {
+        "horizon": 30,
+        "label": "next_month",
+        "best_model": "StackedTuned",
+        "ret_rmse": 0.30780226342331374,
+        "persistence_rmse": 0.1597473080893166,
+        "beats_persistence": false,
+        "directional_accuracy": 0.6764705882352942,
+        "direction_classifier_acc": 0.2857142857142857,
+        "direction_high_conf_acc": 0.2869198312236287,
+        "paper_best_mode": "long_short",
+        "paper_net_sharpe": 8.256897764672566,
+        "wf_pass_frac": 0.15625,
+        "trustworthy": false
+      }
+    ],
+    "live_forecasts": [
+      {
+        "horizon_days": 1,
+        "horizon_label": "1D",
+        "as_of": "2026-07-30",
+        "current_price": 0.07069,
+        "predicted_price": 0.06952182056032156,
+        "predicted_price_p10": 0.06897820258745224,
+        "predicted_price_p90": 0.07006543853319089,
+        "predicted_return_pct": -1.6525384632599105,
+        "predicted_return_p10_pct": -2.42155525894434,
+        "predicted_return_p90_pct": -0.8835216675754815,
+        "direction_prob_up": 0.2845910509404613,
+        "confidence": 0.43081789811907745,
+        "model": "Ensemble",
+        "holdout_beats_persistence": false,
+        "holdout_directional_accuracy": 0.4152542372881356,
+        "holdout_ret_rmse": 0.03599904153779296,
+        "persistence_ret_rmse": 0.03584759550501442,
+        "wf_pass_frac": 0.125,
+        "trustworthy": false
+      },
+      {
+        "horizon_days": 7,
+        "horizon_label": "1W",
+        "as_of": "2026-07-30",
+        "current_price": 0.07069,
+        "predicted_price": 0.06740865827310118,
+        "predicted_price_p10": 0.06671734683338935,
+        "predicted_price_p90": 0.068099969712813,
+        "predicted_return_pct": -4.64187540939146,
+        "predicted_return_p10_pct": -5.619823407286243,
+        "predicted_return_p90_pct": -3.6639274114966778,
+        "direction_prob_up": 0.6821437831478654,
+        "confidence": 0.3642875662957308,
+        "model": "Ensemble",
+        "holdout_beats_persistence": false,
+        "holdout_directional_accuracy": 0.3319327731092437,
+        "holdout_ret_rmse": 0.08234096650591251,
+        "persistence_ret_rmse": 0.07950936396418219,
+        "wf_pass_frac": 0.1875,
+        "trustworthy": false
+      },
+      {
+        "horizon_days": 30,
+        "horizon_label": "1M",
+        "as_of": "2026-07-30",
+        "current_price": 0.07069,
+        "predicted_price": 0.07133367817284587,
+        "predicted_price_p10": 0.07073229498928628,
+        "predicted_price_p90": 0.07193506135640547,
+        "predicted_return_pct": 0.9105646807835197,
+        "predicted_return_p10_pct": 0.059831644201826205,
+        "predicted_return_p90_pct": 1.761297717365213,
+        "direction_prob_up": 0.6841869787145394,
+        "confidence": 0.36837395742907875,
+        "model": "Ensemble",
+        "holdout_beats_persistence": false,
+        "holdout_directional_accuracy": 0.6764705882352942,
+        "holdout_ret_rmse": 0.30780226342331374,
+        "persistence_ret_rmse": 0.1597473080893166,
+        "wf_pass_frac": 0.15625,
+        "trustworthy": false
+      }
+    ]
+  }
+}

@@ -8,3 +8,9 @@ statsmodels==0.14.6
 requests==2.34.2
 tensorflow==2.21.0
 pytest==9.1.1
+python-dotenv>=1.0
+PyYAML>=6.0
+pytrends>=4.9
+lightgbm>=4.0
+xgboost>=2.0
+optuna>=3.0

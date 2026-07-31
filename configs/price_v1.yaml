@@ -1,0 +1,54 @@
+# Production price-prediction config (v1)
+# Locked decisions 2026-07-30 — see docs/SHIFT-FORECAST-PLAN.md
+
+product: price_prediction
+assets: [BTC, ETH, DOGE]
+
+# Multi-horizon price forecasts (CoinCodex-style product surface):
+# next day / next week / next month.
+horizons_days: [1, 7, 30]
+primary_horizon: 7
+
+evaluation:
+  test_frac: 0.2
+  final_holdout_days: 90
+  walk_forward:
+    test_days: 30
+    min_train_days: 180
+    embargo_days: 5
+  random_state: 42
+
+# Live-standard costs (retail Coinbase Advanced Trade–style mid tier).
+costs:
+  fee_bps_round_trip: 50
+  slippage_bps:
+    BTC: 10
+    ETH: 10
+    DOGE: 20
+
+paper:
+  modes: [long_flat, long_short]
+  select_best_by: net_sharpe
+  initial_equity: 100000
+  target_ann_vol: 0.10
+  max_drawdown_kill: 0.25
+  min_abs_pred_return:
+    1: 0.005
+    7: 0.02
+    30: 0.05
+
+data:
+  spot_primary: coinbase
+  spot_fallback: kraken
+  days: 1460
+  fear_greed: true
+  funding: true
+  fred: true
+  fred_series: [DTWEXBGS, DGS10]
+  etherscan: true
+
+gates:
+  beat_persistence_rmse: true
+  directional_accuracy_min: 0.55
+  paper_net_sharpe_min: 0.0
+  walk_forward_pass_frac: 0.70

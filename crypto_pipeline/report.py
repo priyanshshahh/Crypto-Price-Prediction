@@ -44,7 +44,7 @@ def build_metrics_json(symbols: dict, data_meta: dict, regression_all: dict,
     for sym in symbols:
         entry = {"regression": regression_all[sym], "clustering": clustering_all[sym]["results"]}
         ts = ts_all.get(sym, {})
-        for model_name in ("ARIMA", "LSTM"):
+        for model_name in ("ARIMA", "LSTM", "GRU"):
             if model_name in ts:
                 m = {k: v for k, v in ts[model_name].items()
                      if k not in ("pred_price", "actual_price", "forecasts")}
@@ -55,8 +55,13 @@ def build_metrics_json(symbols: dict, data_meta: dict, regression_all: dict,
 
 def build_dashboard_json(symbols: dict, frames: dict, regression_all: dict,
                          ts_all: dict, clustering_all: dict,
-                         history_days: int = 90) -> dict:
-    """JSON in the shape the React dashboard (and its mock Supabase client) expects."""
+                         history_days: int = 90,
+                         horizon_forecasts: list | None = None) -> dict:
+    """JSON in the shape the React dashboard (and its mock Supabase client) expects.
+
+    Callers: pipeline.py (classic + production). Optional horizon_forecasts adds
+    Optional 1D/1W/1M live forecast rows (extra table; not in DASHBOARD_TABLES required set).
+    """
     now = datetime.now(timezone.utc).isoformat()
     ids = {sym: _uid() for sym in symbols}
 
@@ -100,14 +105,24 @@ def build_dashboard_json(symbols: dict, frames: dict, regression_all: dict,
 
     forecasts = []
     for sym, ts in ts_all.items():
-        for model_type in ("ARIMA", "LSTM"):
+        for model_type in ("ARIMA", "LSTM", "GRU"):
             if model_type not in ts:
                 continue
-            for date_str, price in ts[model_type]["forecasts"]:
-                forecasts.append({
+            for item in ts[model_type]["forecasts"]:
+                # Support (date, price) or (date, price, lo, hi) from ARIMA log-return path
+                if len(item) >= 4:
+                    date_str, price, lo, hi = item[0], item[1], item[2], item[3]
+                else:
+                    date_str, price = item[0], item[1]
+                    lo = hi = None
+                row = {
                     "id": _uid(), "crypto_id": ids[sym], "model_type": model_type,
                     "forecast_date": date_str, "predicted_price": round(float(price), 6),
-                })
+                }
+                if lo is not None and hi is not None:
+                    row["predicted_price_lo"] = round(float(lo), 6)
+                    row["predicted_price_hi"] = round(float(hi), 6)
+                forecasts.append(row)
 
     clustering_results = []
     for sym, clus in clustering_all.items():
@@ -121,13 +136,26 @@ def build_dashboard_json(symbols: dict, frames: dict, regression_all: dict,
                 "is_best": a["silhouette_score"] == best_sil,
             })
 
-    return {
+    doc = {
         "cryptocurrencies": crypto_list,
         "price_history": price_history,
         "regression_models": regression_models,
         "forecasts": forecasts,
         "clustering_results": clustering_results,
     }
+    if horizon_forecasts:
+        # Attach crypto_id if callers passed symbol
+        rows = []
+        for row in horizon_forecasts:
+            r = dict(row)
+            sym = r.pop("symbol", None)
+            if sym and "crypto_id" not in r:
+                r["crypto_id"] = ids[sym]
+            if "id" not in r:
+                r["id"] = _uid()
+            rows.append(r)
+        doc["horizon_forecasts"] = rows
+    return doc
 
 
 def validate_dashboard_json(doc: dict) -> None:

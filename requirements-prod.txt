@@ -1,0 +1,13 @@
+# Slim deps for production mode (no TensorFlow — saves ~1GB disk).
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.8
+scikit-learn>=1.4
+statsmodels>=0.14
+requests>=2.31
+pytest>=8.0
+PyYAML>=6.0
+python-dotenv>=1.0
+pytrends>=4.9
+lightgbm>=4.0
+xgboost>=2.0

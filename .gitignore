@@ -1,3 +1,5 @@
+# Git ignore — keep the public OSS repo lean
+
 node_modules/
 .env
 dist/
@@ -6,9 +8,17 @@ dist/
 __pycache__/
 .pytest_cache/
 
-# Raw data cache (re-fetched by pipeline.py; sample fixture lives in tests/fixtures/)
-# Root-only so public/data/crypto_data.json (dashboard) stays tracked.
+# Raw data cache (re-fetched by pipeline; fixture in tests/fixtures/)
 /data/
 .vercel
 .env*
 !.env.example
+
+# Internal notes, competitive research, interview study (not for GitHub)
+/private/
+
+# Legacy exploratory artifacts (not part of the maintained product)
+create_dashboard.py
+cryp_*.ipynb
+crypt_*.ipynb
+.vite/

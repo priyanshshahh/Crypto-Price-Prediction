@@ -103,10 +103,10 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">
-                Cryptocurrency Price Prediction
+                Crypto Price Prediction
               </h1>
               <p className="mt-1 text-sm text-gray-600">
-                ML-powered analysis and forecasting for Bitcoin, Ethereum, and Dogecoin
+                Open-source multi-horizon forecasts for Bitcoin, Ethereum, and Dogecoin — paper trading only
               </p>
             </div>
             <BarChart3 className="w-12 h-12 text-blue-600" />
@@ -193,7 +193,7 @@ export default function Dashboard() {
               <ModelPerformance cryptoId={selectedCrypto.id} cryptoName={selectedCrypto.name} />
             )}
             {activeTab === 'forecast' && selectedCrypto && (
-              <ForecastView cryptoId={selectedCrypto.id} cryptoName={selectedCrypto.name} />
+              <ForecastView cryptoId={selectedCrypto.id} cryptoName={selectedCrypto.name} cryptoSymbol={selectedCrypto.symbol} />
             )}
             {activeTab === 'clustering' && selectedCrypto && (
               <ClusteringView cryptoId={selectedCrypto.id} cryptoName={selectedCrypto.name} />
@@ -202,22 +202,22 @@ export default function Dashboard() {
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">About This Project</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">About</h2>
           <div className="prose max-w-none">
             <p className="text-gray-700 mb-4">
-              This cryptocurrency prediction platform uses machine learning to analyze and forecast
-              prices for Bitcoin, Ethereum, and Dogecoin. The system combines multiple approaches:
+              Open-source production pipeline for multi-horizon crypto forecasts. Every number is
+              measured on real Coinbase/Kraken daily OHLCV with chronological evaluation and a
+              persistence baseline. Paper trading only — not financial advice.
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li><strong>Regression Models:</strong> Ridge, Lasso, ElasticNet, SVR, Random Forest, and Gradient Boosting</li>
-              <li><strong>Time Series Forecasting:</strong> ARIMA and LSTM neural networks</li>
-              <li><strong>Clustering Analysis:</strong> KMeans, DBSCAN, Agglomerative, and GMM for market regime identification</li>
+              <li><strong>Forecasts:</strong> 1D / 1W / 1M with P(up), confidence bands, and Trustworthy gates</li>
+              <li><strong>Models:</strong> LightGBM / XGBoost / stacked &amp; regime models; LSTM &amp; GRU path charts</li>
+              <li><strong>Context:</strong> technicals, funding, on-chain proxies, macro, sentiment, prediction-market odds</li>
+              <li><strong>Risk &amp; skill:</strong> Monte Carlo scenarios, walk-forward Correct/Incorrect journal, regime clustering</li>
             </ul>
             <p className="text-gray-700 mt-4">
-              All metrics come from real daily OHLCV data (Coinbase Exchange public API) evaluated on a
-              chronological holdout against a persistence baseline. Daily crypto returns are hard to
-              predict: directional accuracy hovers near 50% and no model decisively beats the naive
-              baseline — the dashboard reports that honestly rather than quoting inflated price-level R².
+              Primary metric is return RMSE vs persistence — not price R². Details:
+              <code className="text-sm bg-gray-100 px-1 rounded">docs/METHODS.md</code>.
             </p>
           </div>
         </div>
